@@ -1,4 +1,4 @@
-Welcome to TensorFlow Model Gardon's documentation!
+Welcome to TensorFlow Model Garden's documentation!
 =======================================
 
 .. toctree::
