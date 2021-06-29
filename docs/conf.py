@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'tfmd'
+project = 'TFMG(docs)'
 copyright = '2021, GSoC'
 author = 'GSoC'
 
