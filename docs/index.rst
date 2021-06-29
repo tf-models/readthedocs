@@ -4,6 +4,7 @@ Welcome to Test's documentation!
 
 Test contents:
 
+================================
 test: .rst file 
 
 .. toctree::
