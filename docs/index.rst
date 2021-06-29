@@ -9,3 +9,4 @@ Contents:
 
    overview
    quickstart
+   get_started.md
