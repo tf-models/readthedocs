@@ -2,7 +2,9 @@
 Welcome to Test's documentation!
 ================================
 
-Test contents 
+Test contents:
+
+test: .rst file 
 
 .. toctree::
    :maxdepth: 2
@@ -10,6 +12,7 @@ Test contents
 
    overview
 
+test: .md file
 
 .. toctree::
    :maxdepth: 2
@@ -17,6 +20,7 @@ Test contents
 
    get_started.md
 
+test: subfolder file 
 
 .. toctree::
    :maxdepth: 2
