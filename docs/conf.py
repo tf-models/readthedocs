@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.abspath('..'))
 project = 'TensorFlow Model Garden'
 copyright = '2021, GSoC'
 author = 'GSoC'
-version_file = '../tfmd/version.py'
+version_file = '../version.py'
 
 
 def get_version():
