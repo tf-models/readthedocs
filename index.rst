@@ -5,6 +5,5 @@ Welcome to TensorFlow Model Gardon's documentation!
    :maxdepth: 2
    :caption: Get Started
 
-   get_started.md
+   doc/get_started.md
    modelzoo_statistics.md
-   model_zoo.md
