@@ -30,27 +30,27 @@ Perform inference
 Structure of TFMG examplars
 ============
 
-+------------+-------------+----------+----------------------------------------------+
-| Group      | Folder      | Required | Description                                  |
-+============+=============+==========+==============================================+
-| Core       | dataloaders | Yes      | Decoders and parsers for your data pipeline. |
-|            +-------------+----------+----------------------------------------------+
-|            | modeling    | Yes      | Model and the building blocks.               |
-|            +-------------+----------+----------------------------------------------+
-|            | losses      | Yes      | Loss function.                               |
-+------------+-------------+----------+----------------------------------------------+
-| Supporting | common      | Yes      | Decoders and parsers for your data pipeline. |
-|            +-------------+----------+----------------------------------------------+
-|            | configs     | Yes      | Model and the building blocks.               |
-|            +-------------+----------+----------------------------------------------+
-|            | ops         | Yes      | Loss function.                               |
-|            +-------------+----------+----------------------------------------------+
-|            | tasks       | Yes      | Decoders and parsers for your data pipeline. |
-+------------+-------------+----------+----------------------------------------------+
-| Optional   | utils       | Yes      | Model and the building blocks.               |
-|            +-------------+----------+----------------------------------------------+
-|            | demos       | Yes      | Loss function.                               |
-+------------+-------------+----------+----------------------------------------------+
++------------+-------------+----------------------------------------------+
+| Groups     | Folders     | Description                                  |
++============+=============+==============================================+
+| Core       | dataloaders | Decoders and parsers for your data pipeline. |
+|            +-------------+----------------------------------------------+
+|            | modeling    | Model and the building blocks.               |
+|            +-------------+----------------------------------------------+
+|            | losses      | Loss function.                               |
++------------+-------------+----------------------------------------------+
+| Supporting | common      | Registry imports. The tasks and configs need to be regis-tered before execution. |
+|            +-------------+----------------------------------------------+
+|            | configs     | Theconfigfiles for the task class to train and evaluate themodel.               |
+|            +-------------+----------------------------------------------+
+|            | ops         | Operations: utility functions used by the data pipeline, lossfunction and modeling.                               |
+|            +-------------+----------------------------------------------+
+|            | tasks       | Tasks  for  running  the  model.   Tasks  are  essentially  themain driver for training and evaluating the model. |
++------------+-------------+----------------------------------------------+
+| Optional   | utils       | Model and the building blocks.               |
+|            +-------------+----------------------------------------------+
+|            | demos       | Loss function.                               |
++------------+-------------+----------------------------------------------+
 
 
 test 
