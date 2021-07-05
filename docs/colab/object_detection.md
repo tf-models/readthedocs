@@ -1,15 +1,12 @@
-========
-Object Detection
-========
+# Object Detection
 
-Install TF Vision
-============
+## Install TF Vision
 
-#. To use the PHP stream handler, ``allow_url_fopen`` must be enabled in your
+1. To use the PHP stream handler, ``allow_url_fopen`` must be enabled in your
    system's php.ini.
 
 
-.. code-block:: bash
+```bash
     # download
     %%capture
     !pip install tf-models-nightly
@@ -22,6 +19,7 @@ Install TF Vision
     import matplotlib.pyplot as plt
     import tensorflow_addons as tfa
     import numpy as np
+```
 
 .. note::
 

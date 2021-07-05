@@ -24,7 +24,7 @@ This documentation is to explain a process for reproducing a state-of-the-art ma
    :maxdepth: 2
    :caption: Colab Notebooks
 
-   colab/object_detection
+   colab/object_detection.md
 
 
 .. toctree::
