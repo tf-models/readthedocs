@@ -32,12 +32,12 @@
 .. _installation:
 
 
-Perform inference
-============
+## Perform inference
 
 
 
-Structure of TFMG examplars
+
+## Structure of TFMG examplars
 ============
 
 +------------+-------------+----------------------------------------------+
@@ -63,29 +63,19 @@ Structure of TFMG examplars
 +------------+-------------+----------------------------------------------+
 
 
-test 
-
-=====  =====  =======
-A      B      A and B
-=====  =====  =======
-False  False  False
-True   False  False
-False  True   False
-True   True   True
-=====  =====  =======
 
 
 
-Train a detector on custom dataset
+## Train a detector on custom dataset
 ============
 
-Support a new dataset 
+### Support a new dataset 
 -------------
 
-Modify the config  
+### Modify the config  
 -------------
 
-Train a new detector
+### Train a new detector
 -------------
 
 
