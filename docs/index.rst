@@ -4,27 +4,22 @@ Welcome to Test's documentation!
 
 Test contents:
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Test Example
 
-test: .rst file 
+   example
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: Test Overview 
+   :caption: Colab Notebooks
 
-   overview
+   colab/object_detection
 
-test: .md file
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Test Get Started
-
-   get_started.md
-
-test: subfolder file 
 
 .. toctree::
    :maxdepth: 2
    :caption: Test Tutorials
 
-   tutorials/test.md
+   guides/test.md
