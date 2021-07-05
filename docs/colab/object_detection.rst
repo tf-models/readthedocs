@@ -5,7 +5,6 @@ Object Detection
 Install TF Vision
 ============
 
-#. PHP 7.2.5
 #. To use the PHP stream handler, ``allow_url_fopen`` must be enabled in your
    system's php.ini.
 
