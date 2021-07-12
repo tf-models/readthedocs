@@ -24,11 +24,20 @@ This documentation is to explain a process for reproducing a state-of-the-art ma
    :maxdepth: 2
    :caption: Colab Notebooks
 
-   colab/object_detection.md
+   colab/object_detection/01_install_tf_vision.md
+   colab/object_detection/02_perform_inference.md   
+   colab/object_detection/03_train_detector_on_dataset.md
+   colab/object_detection/04_test_trained_detector.md
 
 
 .. toctree::
    :maxdepth: 2
    :caption: Test Tutorials
 
-   guides/test.md
+   guides/01_learn_config.md
+   guides/02_datasets.md
+   guides/03_data_pipelines.md
+   guides/04_models.md
+   guides/05_runtime_settings.md
+   guides/06_losses.md
+   guides/07_finetuning_models.md

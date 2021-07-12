@@ -1,0 +1,4 @@
+
+# Finetuning Models
+
+Once the external review is completed and the final model has been published to the TensorFlow Model Garden, it is the team’s responsibility to begin the final training process to obtain the weights for the Machine Learning model. After the final weights have been obtained, they must be published along with a pre-trained model (TensorFlow SavedModel format) to the TensorFlow Hub. For Image Classification models, it is required to provide the option of loading the TFHub model with or without the head. Upon publishing the model to the TFHub, it must be named appropriately in accordance with the current labeling system - the suffix `_vX` where X is the version of the model. 
