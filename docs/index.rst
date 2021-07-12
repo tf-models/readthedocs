@@ -6,11 +6,7 @@ The goal of the TFMG is to develop exemplary implementations of prominent machin
 
 This documentation is to explain a process for reproducing a state-of-the-art machine learning model at a level of quality suitable for inclusion in the TFMG, which includes the engineering process and elaborate on each step, from paper analysis to model release. 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Test Example
 
-   example
 
 
 .. toctree::
@@ -41,3 +37,10 @@ This documentation is to explain a process for reproducing a state-of-the-art ma
    guides/05_runtime_settings.md
    guides/06_losses.md
    guides/07_finetuning_models.md
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Test Example
+
+   example
