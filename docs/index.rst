@@ -1,24 +1,17 @@
 
-Welcome to TensorFlow Model Garden's (TFMG) documentation!
+Welcome to TensorFlow Model Garden's documentation!
 ================================
 
-![Logo](https://storage.googleapis.com/model_garden_artifacts/TF_Model_Garden.png)
+
+The TensorFlow Model Garden (TFMG) is a collection of models that use TensorFlow’s high-level APIs. 
+They are intended to be well-maintained, tested, and kept up to date with the latest TensorFlow API.
+
+They should also be reasonably optimized for fast performance while still being easy to read.
+These models are used as end-to-end tests, ensuring that the models run with the same or improved speed and performance with each new TensorFlow build.
 
 The goal of the TFMG is to develop exemplary implementations of prominent machine learning models in community. 
-
-This documentation is to explain a process for reproducing a state-of-the-art machine learning model at a level of quality suitable for inclusion in the TFMG, which includes the engineering process and elaborate on each step, from paper analysis to model release. 
-
-# TensorFlow Official Models
-
-The TensorFlow official models are a collection of models
-that use TensorFlow’s high-level APIs.
-They are intended to be well-maintained, tested, and kept up to date
-with the latest TensorFlow API.
-
-They should also be reasonably optimized for fast performance while still
-being easy to read.
-These models are used as end-to-end tests, ensuring that the models run
-with the same or improved speed and performance with each new TensorFlow build.
+This documentation is to explain a process for reproducing a state-of-the-art machine learning model at a level of quality suitable for inclusion in the TFMG, 
+which includes the engineering process and elaborate on each step, from paper analysis to model release. 
 
 
 .. toctree::
