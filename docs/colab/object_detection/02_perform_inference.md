@@ -1,6 +1,6 @@
 # Perform Inference
 
-TensorFlow provides datasets here [https://www.tensorflow.org/datasets](https://www.tensorflow.org/datasets). All dataset builders are subclass of `tfds.core.DatasetBuilder`. To get the list of available builders, use `tfds.list_builders()` or look at our [catalog](https://www.tensorflow.org/datasets/catalog/overview).
+TensorFlow provides datasets here [https://www.tensorflow.org/datasets](https://www.tensorflow.org/datasets). All dataset builders are subclass of `tfds.core.DatasetBuilder`. To get the list of available builders, use `tfds.list_builders()` or look at the [catalog](https://www.tensorflow.org/datasets/catalog/overview).
 
 ## Example
 

@@ -1,4 +1,4 @@
-# Train a detector on custom dataset
+# Train a Detector on Custom Dataset
 
 
 
