@@ -1,10 +1,10 @@
 
-Welcome to TensorFlow Model Garden's documentation!
+Welcome to MG's documentation!
 ================================
 
 
-The TensorFlow Model Garden (TFMG) is a collection of models that use TensorFlow’s high-level APIs. 
-They are intended to be well-maintained, tested, and kept up to date with the latest TensorFlow API.
+The [xxx] is a collection of models that use [xxx]’s high-level APIs. 
+They are intended to be well-maintained, tested, and kept up to date with the latest [xxx] API.
 
 The goal of the TFMG is to develop exemplary implementations of prominent machine learning models in community. 
 They should also be reasonably optimized for fast performance while still being easy to read. 
@@ -19,51 +19,59 @@ which includes the engineering process and elaborate on each step, from paper an
    :maxdepth: 2
    :caption: Overview
 
-   intro/modeling_steps.md
+   01_overview/01_tfmg_lib.md
+   01_overview/02_tf_datasets.md
+
 
 .. toctree::
    :maxdepth: 2
    :caption: Quick Start
 
-   quick_start/01_install.md
-   quick_start/02_TF_TPU.md   
+   02_quick_start/01_install.md
+   02_quick_start/02_TF_TPU.md 
+   02_quick_start/03_simple_example.md  
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: Computer Vision
+   :caption: Model Zoo 
 
-   colab_cv/0object_detection/01_install_tf_vision.md
-   colab_cv/0object_detection/02_perform_inference.md   
-   colab_cv/0object_detection/03_train_detector_on_dataset.md
-   colab_cv/0object_detection/04_test_trained_detector.md
-
-   colab_cv/image_classification/01_install_tf_vision.md
-   colab_cv/image_classification/02_perform_inference.md   
-   colab_cv/image_classification/03_train_detector_on_dataset.md
-   colab_cv/image_classification/04_test_trained_detector.md
+   03_model_zoo/01_cv.md
+   03_model_zoo/02_nlp.md
 
 
 .. toctree::
    :maxdepth: 2
    :caption: Tutorials
 
-   guides/01_learn_config.md
-   guides/02_datasets.md
-   guides/03_data_pipelines.md
-   guides/04_models.md
-   guides/05_runtime_settings.md
-   guides/06_losses.md
-   guides/07_finetuning_models.md
+   04_tutorials/01_learn_config.md
+   04_tutorials/02_datasets.md
+   04_tutorials/03_data_pipelines.md
+   04_tutorials/04_models.md
+   04_tutorials/05_runtime_settings.md
+   04_tutorials/06_losses.md
+   04_tutorials/07_finetuning_models.md
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Colab Example
+
+   05_colab/01_general_example.md
+   05_colab/02_object_detection.md
+   05_colab/03_image_classification.md
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Colab Example
+
+   06_FAQ/faq.md
 
 
 .. toctree::
    :maxdepth: 2
    :caption: Contribution
 
-   contribution_license/contribution_guide.md
+   07_notes/contribution_guide.md
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Test Example
-
-   example
