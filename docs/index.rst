@@ -58,14 +58,16 @@ which includes the engineering process and elaborate on each step, from paper an
    :caption: Colab Example
 
    05_colab/01_general_example.md
-   05_colab/01_training_lib.md
-   05_colab/02_object_detection.md
-   05_colab/03_image_classification.md
+   05_colab/02_cv_domain_example.md
+   05_colab/02_cv/01_training_lib.md
+   05_colab/02_cv/02_object_detection.md
+   05_colab/02_cv/03_image_classification.md
+   05_colab/03_nlp_domain_example.md
 
 
 .. toctree::
    :maxdepth: 2
-   :caption: Colab Example
+   :caption: FAQ
 
    06_FAQ/faq.md
 

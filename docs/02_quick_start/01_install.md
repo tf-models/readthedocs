@@ -6,7 +6,7 @@
 - macOS 10.12.6 (Sierra) or latter (no GPU support)
 - TensorFlow 2
 
-# How to get started with the official models
+# Installation
 
 * The models in the master branch are developed using TensorFlow 2,
 and they target the TensorFlow [nightly binaries](https://github.com/tensorflow/tensorflow#installation)
