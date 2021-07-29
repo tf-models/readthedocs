@@ -1,3 +1,3 @@
-# Model Zoo - NLP
+# NLP Model Zoo
 
 [table]
