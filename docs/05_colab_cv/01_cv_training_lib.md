@@ -1,4 +1,4 @@
-# TF-Vision Training Library
+# Training Library
 
 TensorFlow Model Garden is conducting a major rewrite to consolidate model implementations with multi-level abstractions and coherent coding style. In order to manage the diverse models and machine learning tasks, we introduce a generic workflow and some common libraries.
 

@@ -58,16 +58,16 @@ which includes the engineering process and elaborate on each step, from paper an
    :maxdepth: 2
    :caption: Colab Example: TF-Vision
 
-   05_colab_cv/01_general_example.md
-   05_colab_cv/02_cv_training_lib.md
+   05_colab_cv/00_general_example.md
+   05_colab_cv/01_cv_training_lib.md
    05_colab_cv/02_cv_domain_example.md
 
 .. toctree::
    :maxdepth: 2
    :caption: Colab Example: TF-NLP
 
-   05_colab_nlp/03_nlp_lib.md
-   05_colab_nlp/03_nlp_domain_example.md
+   05_colab_nlp/01_nlp_lib.md
+   05_colab_nlp/02_nlp_domain_example.md
 
 
 .. toctree::
