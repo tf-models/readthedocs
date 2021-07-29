@@ -1,9 +1,9 @@
 
-Welcome to MG's documentation!
+Welcome to TFMG's documentation!
 ================================
 
 
-The [xxx] is a collection of models that use [xxx]’s high-level APIs. 
+The TensorFlow Model Garden (TFMG) is a collection of models that use TFMG’s high-level APIs. 
 They are intended to be well-maintained, tested, and kept up to date with the latest [xxx] API.
 
 The goal of the TFMG is to develop exemplary implementations of prominent machine learning models in community. 
