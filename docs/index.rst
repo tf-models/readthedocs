@@ -44,6 +44,7 @@ which includes the engineering process and elaborate on each step, from paper an
    :maxdepth: 2
    :caption: Tutorials
 
+   04_tutorials/00_how_to.md
    04_tutorials/01_learn_config.md
    04_tutorials/02_datasets.md
    04_tutorials/03_data_pipelines.md
@@ -55,14 +56,18 @@ which includes the engineering process and elaborate on each step, from paper an
 
 .. toctree::
    :maxdepth: 2
-   :caption: Colab Example
+   :caption: Colab Example: TF-Vision
 
-   05_colab/01_general_example.md
-   05_colab/02_cv_domain_example.md
-   05_colab/02_cv/01_training_lib.md
-   05_colab/02_cv/02_object_detection.md
-   05_colab/02_cv/03_image_classification.md
-   05_colab/03_nlp_domain_example.md
+   05_colab_cv/01_general_example.md
+   05_colab_cv/02_cv_training_lib.md
+   05_colab_cv/02_cv_domain_example.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Colab Example: TF-NLP
+
+   05_colab_nlp/03_nlp_lib.md
+   05_colab_nlp/03_nlp_domain_example.md
 
 
 .. toctree::
