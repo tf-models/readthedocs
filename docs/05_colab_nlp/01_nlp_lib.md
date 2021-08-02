@@ -28,8 +28,7 @@ whole Transformer object to try a different kind of attention primitive,
 for instance.
 
 * [`TransformerScaffold`](layers/transformer_scaffold.py) implements the
-Transformer from ["Attention Is All You Need"]
-(https://arxiv.org/abs/1706.03762), with a customizable attention layer
+Transformer from ["Attention Is All You Need"](https://arxiv.org/abs/1706.03762), with a customizable attention layer
 option. Users can pass a class to `attention_cls` and associated config to
 `attention_cfg`, in which case the scaffold will instantiate the class with
 the config, or pass a class instance to `attention_cls`.
@@ -41,7 +40,7 @@ embedding subnetwork (which will replace the standard embedding logic) and/or a
 custom hidden layer (which will replace the Transformer instantiation in the
 encoder).
 
-Please see the colab ![customize_encoder.ipynb](https://colab.sandbox.google.com/github/tensorflow/models/blob/master/official/colab/nlp/customize_encoder.ipynb)
+Please see the colab [customize_encoder.ipynb](https://colab.sandbox.google.com/github/tensorflow/models/blob/master/official/colab/nlp/customize_encoder.ipynb)
 for how to use scaffold classes to build noval achitectures.
 
 BERT and ALBERT models in this repo are implemented using this library.
