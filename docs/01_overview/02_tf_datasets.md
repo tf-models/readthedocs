@@ -1,3 +1,0 @@
-# TF datasets
-
-[table]
