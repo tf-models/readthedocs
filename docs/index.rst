@@ -1,7 +1,6 @@
 
-Welcome to TFMG's documentation!
+TensorFlow Model Garden Documentation
 ================================
-
 
 The TensorFlow Model Garden (TFMG) is a collection of models that use TFMG’s high-level APIs. 
 They are intended to be well-maintained, tested, and kept up to date with the latest TFMG API.
