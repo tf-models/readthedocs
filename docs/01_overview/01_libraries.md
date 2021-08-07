@@ -7,5 +7,3 @@ TF-NLP is a modeling library for natural language processing using best practice
 ## TF-Vision for Computer Vision
 
 TF-Vision is a modeling library for computer vision natively designed in Tensorflow 2. It provides a wide range of state-of-the-art computer vision models, flexible design for easy extension, and end-to-end pipeline to accomplish tasks in computer vision benchmarks.
-
-[goc]
