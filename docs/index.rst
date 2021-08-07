@@ -18,7 +18,7 @@ which includes the engineering process and elaborate on each step, from paper an
    :maxdepth: 2
    :caption: Overview
 
-   01_overview/01_tfmg_lib.md
+   01_overview/01_libraries.md
    01_overview/02_tf_datasets.md
 
 
