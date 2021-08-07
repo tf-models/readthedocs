@@ -1,17 +1,17 @@
-# TFMG library list
+# Modeling Libraries
 
-## TF-Vision for computer vision
-
-[table]
-
-
-
-## TF-NLP for natural language processing
+## TF-Vision for Computer Vision
 
 [table]
 
 
 
-## Training Library
+## TF-NLP for Natural Language Processing
+
+[table]
+
+
+
+## Orbit for Custom Training
 
 [goc]
