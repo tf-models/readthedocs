@@ -1,7 +1,5 @@
 # Modeling Libraries
 
-We provide standardized SoTA modeling libraries (TF-NLP, TF-Vision)
-
 ## TF-NLP for Natural Language Processing
 
 TF-NLP is a modeling library for natural language processing using best practices in TensorFLow 2. We. It provides a collection of state-of-the-art, reproducible, extensible, and scalable natural language models, as well as reusable modeling components and libraries.
