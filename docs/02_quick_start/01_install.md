@@ -85,8 +85,3 @@ pip3 install --user -r official/requirements.txt
 ```shell
 pip3 install tensorflow-text-nightly
 ```
-
-
-## Contributions
-
-If you want to contribute, please review the [contribution guidelines](https://github.com/tensorflow/models/wiki/How-to-contribute).
