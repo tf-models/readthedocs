@@ -1,0 +1,55 @@
+# Modified from https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg
+
+# [net]
+# Testing
+# batch=1
+# subdivisions=1
+# Training
+batch: 64
+subdivisions: 16
+width: 608
+height: 608
+channels: 3
+momentum: 0.9
+decay: 0.0005
+angle: 0
+saturation: 1.5
+exposure: 1.5
+hue: 0.1
+
+learning_rate: 0.001
+burn_in: 1000
+max_batches: 500200
+policy: steps
+steps: 
+  [400000, 450000]
+scales:
+  [.1, .1]
+
+
+# darknet53 backbone
+backbone:
+# [from, repeat, module, args]
+# conv args [filters, size, stride]
+  [[-1, 1, Conv, [32, 3, 1]],  # 0
+   [-1, 1, Conv, [64, 3, 2]],  # 1-P1/2
+   [-1, 1, Bottleneck, [64]],
+   [-1, 1, Conv, [128, 3, 2]],  # 3-P2/4
+   [-1, 2, Bottleneck, [128]],
+   [-1, 1, Conv, [256, 3, 2]],  # 5-P3/8
+   [-1, 8, Bottleneck, [256]],
+   [-1, 1, Conv, [512, 3, 2]],  # 7-P4/16
+   [-1, 8, Bottleneck, [512]],
+   [-1, 1, Conv, [1024, 3, 2]],  # 9-P5/32
+   [-1, 4, Bottleneck, [1024]],  # 10
+  ]
+
+
+  # parameters
+num_of_classes: 80  # number of classes
+
+# anchors
+anchors:
+  - [10,13, 16,30, 33,23]  # P3/8
+  - [30,61, 62,45, 59,119]  # P4/16
+  - [116,90, 156,198, 373,326]  # P5/32
