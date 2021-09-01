@@ -13,100 +13,87 @@ from tensorflow.keras.layers import (
 )
 from tensorflow.keras.regularizers import l2
 
+"""
+Layers for Darknet-53 Architecture:
+    1. DarknetConv (basic conv)
+    2. DarknetResidual (build up with conv and add layers)
+    3. DarknetBlock (repeat residual block)
+"""
 
-class Darknet(tf.keras.Model):
+class DarknetConv(tf.keras.layers.Layer):
+    """ 1 Basic Conv"""
+    def __init__(self, filters, size, strides=1, batch_norm=True, name="darknet_conv", **kwargs):
+        super(DarknetConv, self).__init__(name=name, **kwargs)
+        self.filters=filters
+        self.size=size
+        self.strides=strides
+        self.batch_norm=batch_norm
 
-    def __init__(
-        self, 
-        anchors=3, 
-        num_classes=80):
-        # super(Darknet).__init__()
-        
-        self.input = None 
-        self.config = [] 
-        self.anchors=anchors,
-        self.num_classes=num_classes
-
-
-    """
-    basic conv used in classification and regression parts
-    """
-    def DarknetConv(self, x, filters, size, strides=1, batch_norm=True):
-        if strides == 1:
+    def call(self, x):
+        if self.strides == 1:
             padding = 'same'
         else:
             x = ZeroPadding2D(((1, 0), (1, 0)))(x)  # top left half-padding
             padding = 'valid'
         x = Conv2D(
-                filters=filters, 
-                kernel_size=size,
-                strides=strides, padding=padding,
+                filters=self.filters, 
+                kernel_size=self.size,
+                strides=self.strides, padding=padding,
                 kernel_regularizer=l2(0.0005))(x)
-        if batch_norm:
+        if self.batch_norm:
             x = BatchNormalization()(x)
             x = LeakyReLU(alpha=0.1)(x)
         return x
 
-
-    """
-    Darknet53 architecture for class probabilities 
-    """
-    def DarknetResidual(self, x, filters):
-        prev = x
-        x = self.DarknetConv(x, filters // 2, 1)
-        x = self.DarknetConv(x, filters, 3)
+class DarknetResidual(tf.keras.layers.Layer):
+    """ 2 DarknetConv + 1 AddLayer"""
+    def __init__(self, filters, name="darknet_residual", **kwargs):
+        super(DarknetResidual).__init__(name=name, **kwargs)
+        # self.filters=filters 
+        self.conv_0 = DarknetConv(filters//2, 1)
+        self.conv_1 = DarknetConv(filters, 3)
+    
+    def call(self, x):
+        prev = x 
+        x = self.conv_0(x)
+        x = self.conv_1(x)
         x = Add()([prev, x])
+        return x 
+
+class DarknetBlock(tf.keras.layers.Layer):
+    """ 1 DarknetConv + Repeat DarknetResidual blocks"""
+    def __init__(self, filters, blocks, name="darknet_block", **kwargs):
+        super(DarknetBlock).__init__(name=name, **kwargs)
+        self.conv = DarknetConv(filters, 3, strides=2)
+        self.resblock = DarknetResidual(filters)
+        self.blocks = blocks
+
+    def call(self, x):
+        x = self.conv(x)
+        for _ in range(self.blocks):
+            x = self.resblock(x)
         return x
 
 
-    def DarknetBlock(self, x, filters, blocks):
-        x = self.DarknetConv(x, filters, 3, strides=2)
-        for _ in range(blocks):
-            x = self.DarknetResidual(x, filters)
-        return x
+"""
+Models for YOLO3: 
+    1. Classification: architecture darknet53
+    2. Location: 3 outputs 
+"""
 
+class Darknet(tf.keras.Model):
+    def __init__(self, backbone, name="darkent53", **kwargs):
+        super(Darknet).__init__(name=name, **kwargs)
+        # 3 type layers
+        # self.input = Input([in_size, in_size, in_channels], name='input')
+        self.backbone = backbone
 
-    def Darknet53(self, name=None):
-        x = inputs = Input([None, None, 3])
-        x = self.DarknetConv(x, 32, 3)
-        x = self.DarknetBlock(x, 64, 1)
-        x = self.DarknetBlock(x, 128, 2)  # skip connection
-        x = x_36 = self.DarknetBlock(x, 256, 8)  # skip connection
-        x = x_61 = self.DarknetBlock(x, 512, 8)
-        x = self.DarknetBlock(x, 1024, 4)
-        return tf.keras.Model(inputs, (x_36, x_61, x), name=name)
-
-
-    """
-    3 Outputs to predicts bounding boxes
-    """
-    def YoloConv(self, x_in, filters, name=None):
-        # 3 output for x_36, x_61, x_output
-        if isinstance(x_in, tuple):
-            inputs = Input(x_in[0].shape[1:]), Input(x_in[1].shape[1:])
-            x, x_skip = inputs
-            # concat with skip connection
-            x = self.DarknetConv(x, filters, 1)
-            x = UpSampling2D(2)(x)
-            x = Concatenate()([x, x_skip])
-        else:
-            x = inputs = Input(x_in.shape[1:])
-
-        x = self.DarknetConv(x, filters, 1)
-        x = self.DarknetConv(x, filters * 2, 3)
-        x = self.DarknetConv(x, filters, 1)
-        x = self.DarknetConv(x, filters * 2, 3)
-        x = self.DarknetConv(x, filters, 1)
-
-        return tf.keras.Model(inputs, x, name=name)(x_in)
-
-
-    def YoloOutput(self, x_in, filters, anchors, num_classes, name=None):
-        x = inputs = Input(x_in.shape[1:])
-        x = self.DarknetConv(x, filters * 2, 3)
-        x = self.DarknetConv(x, anchors * (num_classes + 5), 1, batch_norm=False)
-        x = Lambda(lambda x: tf.reshape(x, (-1, tf.shape(x)[1], tf.shape(x)[2],
-                                            anchors, num_classes + 5)))(x)
-        return tf.keras.Model(inputs, x, name=name)(x_in)
-
+    def call(self, x):
+        outputs = []
+        # x = inputs = self.input(x)
+        for (fn, filters, para, isOutput) in self.backbone:
+            x = fn(filters, para)(x)
+            if isOutput: outputs.append(x)
+        x_36, x_61, x = outputs
+        return x_36, x_61, x
 
