@@ -13,14 +13,10 @@ YOLOV3_LAYER_LIST = [
     'yolo_output_2',
 ]
 
-def load_darknet_weights(model, weights_file, tiny=False):
+def load_darknet_weights(model, weights_file):
     wf = open(weights_file, 'rb')
     major, minor, revision, seen, _ = np.fromfile(wf, dtype=np.int32, count=5)
 
-    # if tiny:
-    #     layers = YOLOV3_TINY_LAYER_LIST
-    # else:
-    #     layers = YOLOV3_LAYER_LIST
     layers = YOLOV3_LAYER_LIST
 
     for layer_name in layers:
