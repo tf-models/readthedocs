@@ -357,3 +357,6 @@ MigrationBackup/
 ./.git/objects/a5/ed716e26824d8d166786bedf927a73c6c441fb
 ./official/projects/yolo3/data/yolov3.weights
 ./.git/objects/a5/ed716e26824d8d166786bedf927a73c6c441fb
+./official/projects/yolo3/data/yolov3.weights
+./.git/objects/a5/ed716e26824d8d166786bedf927a73c6c441fb
+./.git/lfs/objects/52/3e/523e4e69e1d015393a1b0a441cef1d9c7659e3eb2d7e15f793f060a21b32f297
