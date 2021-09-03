@@ -22,8 +22,9 @@ from tensorflow.keras.losses import (
     sparse_categorical_crossentropy
 )
 
-from ops import yolo_loss, decode
-from data import make_dataset
+from loss.loss import yolo_loss
+from ops.decode import decode
+from dataloader.data import make_dataset
 
 """
 Part 1: Feature Extraction
