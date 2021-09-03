@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3a688928-a9a1-4ed1-bbb7-f43cda6c3f3f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.ipynb_checkpoints/TFMG_Project_Tutorial_(v6)-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.ipynb_checkpoints/TFMG_Project_Tutorial_(v6)-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TFMG_Project_Tutorial_(v6).ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TFMG_Project_Tutorial_(v6).ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Untitled.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/colab_demo.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/import_registry.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/coco.names" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/dataconfig.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/detection_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/convert.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataloaders/dataloader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/detect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/__init__py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loss/loss.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modeling/bbox.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modeling/darknet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modeling/heads.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modeling/yolo3_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/.ipynb_checkpoints/detection_task-checkpoint.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/detection_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/load_darknet_weights.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/load_weights.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/checkpoints/checkpoint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/checkpoints/yolov3.tf.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/convert.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/data/coco.names" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/data/girl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/data/meme.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/data/meme2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/data/meme_out.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/data/street.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/data/street_out.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/data/voc2012.names" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/detect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/output.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/yolov3_tf2/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/yolov3_tf2/folder_modeling/bbox.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/yolov3_tf2/folder_modeling/darknet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/yolov3_tf2/folder_modeling/heads.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/yolov3_tf2/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolo3_basic/yolov3_tf2/utils.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1xcGm4wgIRV04ImwQ3wCewjxUEv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a688928-a9a1-4ed1-bbb7-f43cda6c3f3f" name="Default Changelist" comment="" />
+      <created>1630647119370</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630647119370</updated>
+      <workItem from="1630647120703" duration="22000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

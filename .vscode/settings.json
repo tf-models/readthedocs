@@ -2,5 +2,6 @@
     "files.associations": {
         "*.rmd": "markdown",
         "vector": "cpp"
-    }
+    },
+    "python.pythonPath": "/Users/Gorgeous/opt/anaconda3/envs/dev/bin/python"
 }
