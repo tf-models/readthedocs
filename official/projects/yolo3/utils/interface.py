@@ -1,9 +1,12 @@
 import tensorflow as tf
 import os
-from yolo3 import YOLOV3
-from load_weight import load_weights
 from absl import logging
-from ops import build_boxes, non_max_suppression, decode
+
+from modeling.yolo3 import YOLOV3
+from dataloader import load_weights
+from ops.bbox import non_max_suppression 
+from utils.decode import decode 
+from utils.draw_boxes import build_boxes 
 
 
 def load_model(num_classes, anchors, MODEL_SIZE, load_full_weights):

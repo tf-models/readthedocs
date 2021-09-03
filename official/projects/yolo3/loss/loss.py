@@ -1,113 +1,5 @@
+
 import tensorflow as tf
-from seaborn import color_palette
-import numpy as np
-import cv2 as cv
-import time
-
-
-
-def build_boxes(inputs):
-
-    center_x, center_y, width, height, confidence, classes = tf.split(inputs, [1, 1, 1, 1, 1, -1], axis=-1)
-    top_left_x = center_x - (width / 2)
-    top_left_y = center_y - (height / 2)
-    bottom_right_x = center_x + (width / 2)
-    bottom_right_y = center_y + (height / 2)
-
-    boxes = tf.concat([top_left_x, top_left_y,
-                       bottom_right_x, bottom_right_y,
-                       confidence, classes], axis=-1)
-    return boxes
-
-
-def decode(x, anchors, n_classes, img_size):
-    n_anchors = len(anchors)
-    shape = x.get_shape().as_list()
-    grid_shape = shape[1:3]
-
-    x = tf.reshape(x, [-1, n_anchors * grid_shape[0] * grid_shape[1], n_classes + 5])
-    strides = (img_size[0] // grid_shape[0], img_size[1] // grid_shape[1])
-    box_centers, box_shapes, confidence, classes = tf.split(x, [2, 2, 1, n_classes], axis=-1)
-
-    a = tf.range(grid_shape[0], dtype=tf.float32)
-    b = tf.range(grid_shape[1], dtype=tf.float32)
-    x_offset, y_offset = tf.meshgrid(a, b)
-    x_offset = tf.reshape(x_offset, (-1, 1))
-    y_offset = tf.reshape(y_offset, (-1, 1))
-    x_y_offset = tf.concat([x_offset, y_offset], axis=-1)
-
-    x_y_offset = tf.tile(x_y_offset, [1, n_anchors])
-
-    x_y_offset = tf.reshape(x_y_offset, [1, -1, 2])
-
-    box_centers = tf.nn.sigmoid(box_centers)
-
-    box_centers = (box_centers + x_y_offset) * strides
-
-    anchors = tf.tile(anchors, [grid_shape[0] * grid_shape[1], 1])
-
-    box_shapes = tf.exp(box_shapes) * tf.cast(anchors, dtype=tf.float32)
-
-    confidence = tf.nn.sigmoid(confidence)
-
-    classes = tf.nn.sigmoid(classes)
-
-    output = tf.concat([box_centers, box_shapes, confidence, classes], axis=-1)
-
-    return output
-
-def non_max_suppression(inputs, n_classes, max_output_size, iou_threshold, confidence_threshold):
-    batch = tf.unstack(inputs, axis=0)
-    boxes_dicts = []
-    for boxes in batch:
-        boxes = tf.boolean_mask(boxes, boxes[:, 4] > confidence_threshold)
-        classes = tf.argmax(boxes[:, 5:], axis=-1)
-
-        classes = tf.expand_dims(tf.cast(classes, dtype=tf.float32), axis=-1)
-
-        boxes = tf.concat([boxes[:, :5], classes], axis=-1)
-        boxes_dict = dict()
-
-        for cls in range(n_classes):
-            mask = tf.equal(boxes[:, 5], cls)
-            mask_shape = mask.get_shape()
-            if mask_shape.rank != 0:
-                class_boxes = tf.boolean_mask(boxes, mask)
-                boxes_coords, boxes_conf_scores, _ = tf.split(class_boxes, [4, 1, -1], axis=-1)
-                boxes_conf_scores = tf.reshape(boxes_conf_scores, [-1])
-                indices = tf.image.non_max_suppression(boxes_coords, boxes_conf_scores, max_output_size, iou_threshold)
-                class_boxes = tf.gather(class_boxes, indices)
-                boxes_dict[cls] = class_boxes[:,:5]
-        boxes_dicts.append(boxes_dict)
-
-    return boxes_dicts
-
-
-def draw_boxes_cv2(img, boxes_dicts, class_names, model_size, time_begin):
-
-    boxes_dicts = boxes_dicts[0]
-    colors = (np.array(color_palette("hls", 80)) * 255).astype(np.uint8)
-    fontface = cv.FONT_HERSHEY_COMPLEX
-    resize_factor = (img.shape[1] / model_size[0], img.shape[0] / model_size[1])
-    for cls in range(len(class_names)):
-        boxes = boxes_dicts[cls]
-        if np.size(boxes) != 0:
-            color = tuple(int(i) for i in colors[cls])
-            for box in boxes:
-                xy, confidence = box[:4], box[4]
-                xy = replace_non_finite(xy)
-                xy = [xy[i].numpy() * resize_factor[i % 2] for i in range(4)]
-                x0, y0, x1, y1= int(xy[0]), int(xy[1]), int(xy[2]), int(xy[3])
-                thickness = int((img.shape[0] + img.shape[1]) // 800 )
-                cv.rectangle(img, (x0-thickness, y0-thickness), (x1+thickness, y1+thickness), color, thickness)
-                text_prob = '{} {:.1f}%'.format(class_names[cls], confidence.numpy() * 100)
-                textsize= cv.getTextSize(text_prob, fontFace=fontface, fontScale=0.5, thickness=1)
-                cv.rectangle(img, (x0 - thickness, y0), (x0 + textsize[0][0], y0 - textsize[0][1] - 5),color=color, thickness=-1)
-                cv.putText(img, text_prob,org=(x0 - 2 * thickness, y0 - 5), fontFace=fontface, fontScale=0.5, color=(255,255,255))
-    fps = 1 / (time.time() - time_begin)
-    text_time = '{:.1f} fps'.format(fps)
-    cv.putText(img, text_time, org=(10, 20), fontFace=fontface, fontScale=0.5,color=(255, 255, 255))
-    return fps
 
 
 def iou(box_1, box_2):
@@ -122,6 +14,7 @@ def iou(box_1, box_2):
     iou = tf.expand_dims(int_area / (box_1_area + box_2_area - int_area), axis=-1)
     return iou
 
+    
 def yolo_loss(y_pred, y_true, decode_pred, anchors, image_size):
 
     num_anchors = len(anchors)
@@ -211,18 +104,3 @@ def yolo_loss(y_pred, y_true, decode_pred, anchors, image_size):
     total_loss = tf.stack(values=[xy_loss, wh_loss, obj_loss, prob_loss], axis=0)
     return total_loss
 
-
-def chunk_anchors(seq, num):
-    avg = len(seq) / float(num)
-    out = []
-    last = 0.0
-
-    while last < len(seq):
-        out.append(seq[int(last):int(last + avg)])
-        last += avg
-
-    return out
-
-
-def replace_non_finite(tensor):
-    return tf.where(tf.math.is_finite(tensor), tensor, tf.zeros_like(tensor))

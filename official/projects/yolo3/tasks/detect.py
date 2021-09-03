@@ -3,9 +3,9 @@ from absl import app, flags, logging
 from absl.flags import FLAGS
 import tensorflow as tf
 import time
-from model_interface import inference, load_model
+from utils import inference, load_model
 from ops import draw_boxes_cv2, chunk_anchors
-from data import load_class_names
+from dataloader import load_class_names
 import statistics
 
 
@@ -25,7 +25,7 @@ flags.DEFINE_multi_integer('model_size', (608, 608), 'Resolution of DNN input, m
 flags.DEFINE_integer('max_out_size', 20 , 'maximum detected object amount of one class')
 flags.DEFINE_float('iou_threshold', 0.4 , 'threshold of non-max suppression')
 flags.DEFINE_float('confid_threshold', 0.3 , 'threshold of confidence')
-flags.DEFINE_string('classes','classes.txt', 'path of class label text file')
+flags.DEFINE_string('classes','coco.names', 'path of class label text file')
 
 _ANCHORS = [(10,13),(16,30),(33,23),(30,61),(62,45),(59,119),(116,90),(156,198),(373,326)]
 logging.set_verbosity(logging.INFO)
