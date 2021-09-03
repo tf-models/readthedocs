@@ -1,6 +1,8 @@
 # TensorFlow2 Model Garden Project Example - YOLOv3 
 
-![Prediction](outputs/dog_output.jpg)
+<p align="center">
+    <img src="outputs/dog_output.jpg">
+</p>
 
 # TFMG Components
 
