@@ -2,12 +2,12 @@
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/project_logo.png">
 </p>
 
-# Welcome to TensorFlow Model Garden project example - YOLOv3
+# Welcome to TensorFlow Model Garden project example - YOLOv3 :sunglasses:
 
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
 
 
-Implement YOLOv3 following TensorFlow Model Garden (TFMG) components. 
+Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support image and video detection tasks. 
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
@@ -15,6 +15,21 @@ Implement YOLOv3 following TensorFlow Model Garden (TFMG) components.
 
 ## Implement Detail and TFMG Tutorial Colab
 <a href="https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/></a>
+
+
+| Folders      | Required | Description                                                                                                                                                                                   |
+|-------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **modeling** | yes      | Darknet-53 architecture and YOLO prediction models and base blocks.                                                                                                                                                              |
+| **ops**     | yes      | Operations: utility functions used by the data pipeline, loss function and modeling.                                                                                                          |
+| **losses**      | yes      | Loss                                                                                                                                                                |
+| **dataloaders** | yes      | Decoders and parsers for your data pipeline.                                                                                                                                                  |
+| configs     | yes      | The  config  files for the task class to train and evaluate the model.                                                                                                                        |
+| tasks       | yes      | Tasks for running the model. Tasks are essentially the main driver for training and evaluating the model.                                                                                     |
+| common      | yes      | Registry imports. The tasks and configs need to be registered before execution.                                                                                                             |
+| utils       | no       | Utility functions for external resources,  e.g. downloading weights, datasets from external sources, and the test cases for these functions. |
+| demos       | no       | Files needed to create a Jupyter Notebook/Google Colab demo of the model. |
+
+
 
 
 # Installation
