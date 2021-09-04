@@ -57,6 +57,7 @@ Implement YOLOv3 (simplified version) by following TensorFlow Model Garden compo
 ## Installation
 
 [![TensorFlow 2.5](https://img.shields.io/badge/TensorFlow-2.5-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.4.0)
+[![TFDS 4.4](https://img.shields.io/badge/TF%20Datasets-4.4-FF6F00?logo=tensorflow)](https://www.tensorflow.org/datasets/overview)
 [![Python 3.8](https://img.shields.io/badge/Python-3.8-3776AB?logo=python)](https://www.python.org/downloads/release/python-379/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5-5C3EE8?logo=opencv)](https://opencv.org/)
 
