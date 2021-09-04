@@ -5,7 +5,8 @@
 # Welcome to TensorFlow Model Garden Project Example - YOLOv3 :sunglasses:
 
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
-
+[![TensorFlow 2.4](https://img.shields.io/badge/TensorFlow-2.4-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.4.0)
+[![Python 3.7](https://img.shields.io/badge/Python-3.7-3776AB)](https://www.python.org/downloads/release/python-379/)
 
 Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support image and video detection tasks. 
 
