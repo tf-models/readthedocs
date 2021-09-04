@@ -1,4 +1,4 @@
-![](/official/projects/yolo3/assets/project_log.png)
+![](/assets/project_log.png)
 # TensorFlow2 Model Garden Project Example - YOLOv3 
 
 
