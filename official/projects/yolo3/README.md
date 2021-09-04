@@ -13,7 +13,7 @@
 [![GitHub](https://img.shields.io/badge/Up%20to%20Date-passing-green?logo=github)]()
 
 
-Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support image and video detection tasks. 
+Implement YOLOv3 (simplified version) by following TensorFlow Model Garden (TFMG) components. Support image and video detection tasks. 
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
