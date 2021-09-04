@@ -4,7 +4,7 @@
 # Welcome to TensorFlow Model Garden Project Example - YOLOv3 :sunglasses:
 
 [![YOLOv3](http://img.shields.io/badge/Paper%20YOLO%20v3-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
-[![TFMG Tutorial](https://img.shields.io/badge/TFMG%20Tutorial-YOLOv3-F9AB00?logo=googlecolab)](https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb)
+[![TFMG Tutorial](https://img.shields.io/badge/TFMG%20Tutorial-YOLO%20v3-F9AB00?logo=googlecolab)](https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb)
 [![TensorFlow 2.5](https://img.shields.io/badge/TensorFlow-2.5-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.4.0)
 [![TFDS 4.4](https://img.shields.io/badge/TF%20Datasets-4.4-FF6F00?logo=tensorflow)](https://www.tensorflow.org/datasets/overview)
 [![Keras 2.6](https://img.shields.io/badge/Keras-2.6-D00000?logo=keras)](https://keras.io/)
