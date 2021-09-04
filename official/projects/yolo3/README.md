@@ -13,7 +13,9 @@
 
 ## Video 
 
-![](https://evawyf-picgo.oss-us-west-1.aliyuncs.com/compuer_vision/video_times_square.gif)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
+</p>
 
 # TFMG Components
 
