@@ -1,5 +1,7 @@
 # TensorFlow2 Model Garden Project Example - YOLOv3 
 
+![](https://drive.google.com/file/d/1Zs3VJeOl6JKgFcyHRnO1iQN1Bo7_iER5/view?usp=sharing)
+
 # Image
 <p align="center">
     <img src="outputs/output_dog.jpg">
@@ -7,13 +9,7 @@
 
 # Video
 
-<p align="center">
-    <a href="{https://youtu.be/pa8GEZ6nBnk}" title="TensorFlow Model Garden - YOLOv3">
-        <img src="{https://res.cloudinary.com/marcomontalbano/image/upload/v1630726751/video_to_markdown/images/youtube--pa8GEZ6nBnk-c05b58ac6eb4c4700831b2b3070cd403.jpg}" alt="TensorFlow Model Garden - YOLOv3" />
-    </a>
-</p>
-
-<!-- [![TensorFlow Model Garden - YOLOv3](https://res.cloudinary.com/marcomontalbano/image/upload/v1630726751/video_to_markdown/images/youtube--pa8GEZ6nBnk-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/pa8GEZ6nBnk "TensorFlow Model Garden - YOLOv3") -->
+![](https://evawyf-picgo.oss-us-west-1.aliyuncs.com/compuer_vision/video_09032100_times_square.gif)
 
 # TFMG Components
 

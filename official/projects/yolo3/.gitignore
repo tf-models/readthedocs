@@ -5,3 +5,5 @@
 ./outputs/video_09032001_times_square.avi
 ./data/yolov3.weights
 ./outputs/video_09032001_times_square.avi
+./data/yolov3.weights
+./outputs/video_09032100_times_square.mp4

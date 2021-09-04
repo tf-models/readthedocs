@@ -52,31 +52,18 @@ def main(argv):
     if FLAGS.video:
         cap = cv2.VideoCapture(FLAGS.video_path)
         output_type = 'video_'
-        # output_path = os.path.join( os.getcwd(), FLAGS.output_folder, 'output_' + input_file + '.avi')
-        # output_path = FLAGS.output_folder + time.strftime('%m%d%H%M') + input_file + '.avi'
-        # print(output_path)
-        # for i in output_file:
-        #     if '.mp4' in i:
-        #         output_file = i.rstrip('.mp4')
-        # output_file = FLAGS.output_folder + output_file + '_' +  + '.mp4'
-
     else:
         cap = cv2.VideoCapture(FLAGS.cam_num)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280) 
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720) 
         cap.set(cv2.CAP_PROP_FPS, FLAGS.prop_fps)
         output_type = 'camera_'
-        # output_file = FLAGS.output_folder + 'CAMERA' + '_' + time.strftime('%m%d%H%M') + '.avi'
 
-    # 
+    # save output video
     input_name = FLAGS.video_path.split('/')[-1].split('.')[0] 
-    output_path = FLAGS.output_folder + output_type + time.strftime('%m%d%H%M') + '_' + input_name + '.avi'
+    output_path = FLAGS.output_folder + output_type + time.strftime('%m%d%H%M') + '_' + input_name + '.mp4'
 
-    # fourcc = cv2.VideoWriter_fourcc(*FLAGS.output_format)
-    # out = cv2.VideoWriter(output_file, fourcc, 10, (FLAGS.output_res[0], FLAGS.output_res[1]))
-    # output_path = FLAG.output_folder + 'output_' + FLAG.video_path.split('/')[-1] # 'D', 'I', 'V', 'X'  # 
-
-    fourcc = cv2.VideoWriter_fourcc('M','J','P','G')
+    fourcc = cv2.VideoWriter_fourcc(*'MP4V')
     out = cv2.VideoWriter(output_path, fourcc, FLAGS.prop_fps, FLAGS.output_res)
     if not cap.isOpened():
         logging.error("Cannot get streaming")
