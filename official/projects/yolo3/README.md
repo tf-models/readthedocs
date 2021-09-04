@@ -20,10 +20,10 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 
 | Folders      | Required | Description             |
 |-------------|----------|-------------------------------------------|
-| **modeling** | yes      | Darknet-53 architecture, YOLO prediction base blocks and models.     |
-| **ops**     | yes      | Operations for bounding boxes and non-maximum suppression (NMS).    |
-| **losses**      | yes      | Loss functions.    |
-| **dataloaders** | yes      | Decoders and parsers for your data pipeline; functions for downloading pretrained weigths.     |
+| modeling | yes      | Darknet-53 architecture, YOLO prediction base blocks and models.     |
+| ops      | yes      | Operations for bounding boxes and non-maximum suppression (NMS).    |
+| losses      | yes      | Loss functions.    |
+| dataloaders | yes      | Decoders and parsers for your data pipeline; functions for downloading pretrained weigths.     |
 | tasks       | yes      | Tasks for running the model. Tasks are essentially the main driver for training and evaluating the model.     |
 | configs     | yes      | The  config  files for the task class to train and evaluate the model.      |
 | common      | yes      | Registry imports. The tasks and configs need to be registered before execution.     |
