@@ -10,7 +10,7 @@
 [![Keras 2.6](https://img.shields.io/badge/Keras-2.6-D00000?logo=keras)](https://keras.io/)
 [![Python 3.8](https://img.shields.io/badge/Python-3.8-3776AB?logo=python)](https://www.python.org/downloads/release/python-379/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5-5C3EE8?logo=opencv)](https://opencv.org/)
-[![GitHub](https://img.shields.io/badge/Up%20to%20Date-passing-00ED00?logo=github)]()
+[![GitHub](https://img.shields.io/badge/Up%20to%20Date-passing-brightgreen?logo=github)]()
 
 
 Implement YOLOv3 (simplified version) by following TensorFlow Model Garden components. Support image and video detection tasks. 
