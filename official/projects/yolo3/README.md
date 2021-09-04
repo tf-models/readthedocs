@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/Logo_TFMG_YOLO.png">
+    <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/project_log.png">
 </p>
 
 # TensorFlow Model Garden project example - YOLOv3
