@@ -8,8 +8,9 @@
 [![Python 3.7](https://img.shields.io/badge/Python-3.7-3776AB?logo=python)](https://www.python.org/downloads/release/python-379/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-2.6-5C3EE8?logo=opencv)](https://opencv.org/)
 [![TFMG Tutorial](https://img.shields.io/badge/TFMG%20Tutorial-YOLOv3-orange?logo=colab)](https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb)
-
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
+
+
 Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support image and video detection tasks. 
 
 <p align="center">
@@ -20,7 +21,6 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb)
 
-<a href="https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/></a>
 
 ### TFMG Components
 
