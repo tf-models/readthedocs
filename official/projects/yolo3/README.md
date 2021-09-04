@@ -116,10 +116,6 @@ python detect_video.py --video_path ./data/times_square.mp4 --video True
 </p>
 
 
-```
-find . -size +50M | cat >> .gitignore
-```
-
 ### Detection
 
 ```
@@ -143,16 +139,23 @@ python detect_video.py --video path_to_file.mp4 --output ./output.avi
 
 # Fine-tuning Task
 
+Usage:
+```
 
+```
+
+Logic:
 
 # Training Task
-## Training
 
+Usage:
 ```
 python train.py --
 ```
 
-### Command Line Args Reference
+Logic:
+
+# Command Line Args Reference
 
 ```
 # convert.py
@@ -164,4 +167,17 @@ python train.py --
 # train.py
 
 
+```
+
+## Tips:
+
+Avoid to push large files. First, run: 
+```
+find . -size +50M | cat >> .gitignore
+```
+Then, 
+```
+git add .
+git commit -m "updates"
+git push 
 ```
