@@ -2,12 +2,18 @@
 
 # Image
 <p align="center">
-    <img src="outputs/dog_output.jpg">
+    <img src="outputs/output_dog.jpg">
 </p>
 
 # Video
 
-[![TensorFlow Model Garden - YOLOv3](https://res.cloudinary.com/marcomontalbano/image/upload/v1630726751/video_to_markdown/images/youtube--pa8GEZ6nBnk-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/pa8GEZ6nBnk "TensorFlow Model Garden - YOLOv3")
+<p align="center">
+    <a href="{https://youtu.be/pa8GEZ6nBnk}" title="TensorFlow Model Garden - YOLOv3">
+        <img src="{https://res.cloudinary.com/marcomontalbano/image/upload/v1630726751/video_to_markdown/images/youtube--pa8GEZ6nBnk-c05b58ac6eb4c4700831b2b3070cd403.jpg}" alt="TensorFlow Model Garden - YOLOv3" />
+    </a>
+</p>
+
+<!-- [![TensorFlow Model Garden - YOLOv3](https://res.cloudinary.com/marcomontalbano/image/upload/v1630726751/video_to_markdown/images/youtube--pa8GEZ6nBnk-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/pa8GEZ6nBnk "TensorFlow Model Garden - YOLOv3") -->
 
 # TFMG Components
 
