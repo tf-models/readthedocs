@@ -92,8 +92,10 @@ wget https://pjreddie.com/media/files/yolov3.weights -O ./data/yolov3.weights
 
 ## TensorFlow Datasets
 
-- COCO: https://www.tensorflow.org/datasets/catalog/coco
-- VOC: https://www.tensorflow.org/datasets/catalog/voc
+- COCO: 
+    - https://www.tensorflow.org/datasets/catalog/coco
+- VOC: 
+    - https://www.tensorflow.org/datasets/catalog/voc
 
 
 ## Detection Task
