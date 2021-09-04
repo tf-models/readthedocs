@@ -5,9 +5,16 @@
 # Welcome to TensorFlow Model Garden Project Example - YOLOv3 :sunglasses:
 
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
+[![TFMG Tutorial](https://img.shields.io/badge/TFMG%20Tutorial-YOLO%20v3-F9AB00?logo=googlecolab)](https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb)
+[![TensorFlow 2.5](https://img.shields.io/badge/TensorFlow-2.5-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.4.0)
+[![TFDS 4.4](https://img.shields.io/badge/TF%20Datasets-4.4-FF6F00?logo=tensorflow)](https://www.tensorflow.org/datasets/overview)
+[![Keras 2.6](https://img.shields.io/badge/Keras-2.6-D00000?logo=keras)](https://keras.io/)
+[![Python 3.8](https://img.shields.io/badge/Python-3.8-3776AB?logo=python)](https://www.python.org/downloads/release/python-379/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.5-5C3EE8?logo=opencv)](https://opencv.org/)
+[![GitHub](https://img.shields.io/badge/Up%20to%20Date-passing-green?logo=github)]()
 
 
-Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support image and video detection tasks. 
+Implement YOLOv3 (simplified version) by following TensorFlow Model Garden components. Support image and video detection tasks. 
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
@@ -15,8 +22,8 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 
 ## TFMG Tutorial Colab and Implement Details
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb)
 
-<a href="https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/></a>
 
 ### TFMG Components
 
@@ -36,7 +43,7 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 
 ![]()
 
-### Useful Tutorials:
+### Useful Tutorials
 
 - TensorFlow / Keras Guide - Custom Layers and Models: 
     - https://keras.io/api/
@@ -47,9 +54,13 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
     - https://tf.wiki/en/
 
 
-# Installation
+## Installation
 
-## Requirements
+[![TensorFlow 2.5](https://img.shields.io/badge/TensorFlow-2.5-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.4.0)
+[![Python 3.8](https://img.shields.io/badge/Python-3.8-3776AB?logo=python)](https://www.python.org/downloads/release/python-379/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.5-5C3EE8?logo=opencv)](https://opencv.org/)
+
+### Requirements
 
 - Python 3.7+
 - OpenCV 
@@ -58,7 +69,7 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 pip install -r requirements.txt
 ```
 
-## TensorFlow2 Model Garden 
+### TensorFlow2 Model Garden 
 
 - TensorFlow 2.0+
 - Model Garden
@@ -81,25 +92,45 @@ Download pretrained weights from author's official source:
 wget https://pjreddie.com/media/files/yolov3.weights -O ./data/yolov3.weights
 ```
 
+## TensorFlow Datasets
 
-# Detection Task
+- COCO: 
+    - https://www.tensorflow.org/datasets/catalog/coco
+- VOC: 
+    - https://www.tensorflow.org/datasets/catalog/voc
+
+
+## Detection Task
 
 Support image detection and video/webcamera detection. 
 
-## Image File
+### Image File
 
 ```
+# detect image
 python detect.py --image ./data/dog.jpg 
+python detect.py --image ./data/street.jpg  
+python detect.py --image ./data/eagle.jpg  
+python detect.py --image ./data/giraffe.jpg 
+python detect.py --image ./data/girl.png
 ```
 
 <p align="center">
     <img src="outputs/output_dog.jpg">
 </p>
 
-## Video File 
+### Video File 
 
 ```
+# detect video file
 python detect_video.py --video_path ./data/times_square.mp4 --video True
+```
+
+### Camera 
+
+```
+# detect camera
+python detect_video.py --video False
 ```
 
 <p align="center">
@@ -107,52 +138,40 @@ python detect_video.py --video_path ./data/times_square.mp4 --video True
 </p>
 
 
-```
-find . -size +50M | cat >> .gitignore
-```
-
-### Detection
+## Fine-tuning Task
 
 ```
-# yolov3
-python detect.py --image ./data/dog.jpg  
-python detect.py --image ./data/street.jpg  
-python detect.py --image ./data/eagle.jpg  
-python detect.py --image ./data/giraffe.jpg 
-python detect.py --image ./data/girl.png
 
-# webcam
-python detect_video.py --video 0
-
-# video file
-python detect_video.py --video_path ./data/times_square.mp4 --video True
-python detect_video.py --video_path ./data/taryn_elliott.mp4 --video True
-
-# video file with output
-python detect_video.py --video path_to_file.mp4 --output ./output.avi
 ```
 
-# Fine-tuning Task
 
-
-
-# Training Task
-## Training
+## Training Task
 
 ```
 python train.py --
 ```
 
-### Command Line Args Reference
+
+## Command Line Args Reference
 
 ```
-# convert.py
-
 # detect.py
 
 # video_detect.py
 
 # train.py
 
+```
 
+## Tips
+
+Avoid to push large files. First, run: 
+```
+find . -size +50M | cat >> .gitignore
+```
+Then, 
+```
+git add .
+git commit -m "updates"
+git push 
 ```
