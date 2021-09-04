@@ -1,6 +1,6 @@
 ![](https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/project_logo.png)
-# TensorFlow2 Model Garden Project Example - YOLOv3 
 
+[![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
 
 # Detection Demo
 
