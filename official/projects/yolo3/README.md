@@ -2,8 +2,6 @@
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/logo_project.png">
 </p>
 
-# Welcome to TensorFlow Model Garden Project Example - YOLOv3 :sunglasses:
-
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
 [![TFMG Tutorial](https://img.shields.io/badge/TFMG%20Tutorial-YOLO%20v3-F9AB00?logo=googlecolab)](https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb)
 [![TensorFlow 2.5](https://img.shields.io/badge/TensorFlow-2.5-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.4.0)
@@ -13,7 +11,7 @@
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5-5C3EE8?logo=opencv)](https://opencv.org/)
 [![GitHub](https://img.shields.io/badge/Up%20to%20Date-passing-green?logo=github)]()
 
-
+## Welcome to TensorFlow Model Garden Project Example - YOLOv3 :sunglasses:
 Implement YOLOv3 by following TensorFlow Model Garden components. Support image and video detection tasks running on CPU / GPU.
 
 <p align="center">
