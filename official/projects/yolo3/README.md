@@ -11,7 +11,7 @@
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5-5C3EE8?logo=opencv)](https://opencv.org/)
 [![GitHub](https://img.shields.io/badge/Up%20to%20Date-passing-green?logo=github)]()
 
-## Welcome to TensorFlow Model Garden Project Example - YOLOv3 :sunglasses:
+# Welcome to TensorFlow Model Garden Project Example - YOLOv3 :sunglasses:
 Implement YOLOv3 by following TensorFlow Model Garden components. Support image and video detection tasks running on CPU / GPU.
 
 <p align="center">
