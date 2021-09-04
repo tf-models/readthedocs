@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/project_logo.png">
+    <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/Logo_TFMG_YOLO.png">
 </p>
 
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
@@ -13,7 +13,7 @@
 
 ## Video 
 
-![](https://evawyf-picgo.oss-us-west-1.aliyuncs.com/compuer_vision/video_50_times_square.gif)
+![](https://evawyf-picgo.oss-us-west-1.aliyuncs.com/compuer_vision/video_times_square.gif)
 
 # TFMG Components
 
