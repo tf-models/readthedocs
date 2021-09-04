@@ -10,7 +10,7 @@
 [![Keras 2.6](https://img.shields.io/badge/Keras-2.6-D00000?logo=keras)](https://keras.io/)
 [![Python 3.8](https://img.shields.io/badge/Python-3.8-3776AB?logo=python)](https://www.python.org/downloads/release/python-379/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5-5C3EE8?logo=opencv)](https://opencv.org/)
-[![Up to Date](https://github.com/ikatyang/emoji-cheat-sheet/workflows/Up%20to%20Date/badge.svg)](https://github.com/ikatyang/emoji-cheat-sheet/actions?query=workflow%3A%22Up+to+Date%22)
+[![GitHub](https://img.shields.io/badge/Up%20to%20Date-passing-181717?logo=github)]()
 
 
 Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support image and video detection tasks. 
