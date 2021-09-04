@@ -52,13 +52,13 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
     - https://tf.wiki/en/
 
 
-# Installation
+## Installation
 
 [![TensorFlow 2.5](https://img.shields.io/badge/TensorFlow-2.5-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.4.0)
 [![Python 3.8](https://img.shields.io/badge/Python-3.8-3776AB?logo=python)](https://www.python.org/downloads/release/python-379/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5-5C3EE8?logo=opencv)](https://opencv.org/)
 
-## Requirements
+### Requirements
 
 - Python 3.7+
 - OpenCV 
@@ -67,7 +67,7 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 pip install -r requirements.txt
 ```
 
-## TensorFlow2 Model Garden 
+### TensorFlow2 Model Garden 
 
 - TensorFlow 2.0+
 - Model Garden
@@ -91,24 +91,37 @@ wget https://pjreddie.com/media/files/yolov3.weights -O ./data/yolov3.weights
 ```
 
 
-# Detection Task
+## Detection Task
 
 Support image detection and video/webcamera detection. 
 
-## Image File
+### Image File
 
 ```
+# detect image
 python detect.py --image ./data/dog.jpg 
+python detect.py --image ./data/street.jpg  
+python detect.py --image ./data/eagle.jpg  
+python detect.py --image ./data/giraffe.jpg 
+python detect.py --image ./data/girl.png
 ```
 
 <p align="center">
     <img src="outputs/output_dog.jpg">
 </p>
 
-## Video File 
+### Video File 
 
 ```
+# detect video file
 python detect_video.py --video_path ./data/times_square.mp4 --video True
+```
+
+### Camera 
+
+```
+# detect camera
+python detect_video.py --video False
 ```
 
 <p align="center">
@@ -116,56 +129,28 @@ python detect_video.py --video_path ./data/times_square.mp4 --video True
 </p>
 
 
-### Detection
+## Fine-tuning Task
 
-```
-# yolov3
-python detect.py --image ./data/dog.jpg  
-python detect.py --image ./data/street.jpg  
-python detect.py --image ./data/eagle.jpg  
-python detect.py --image ./data/giraffe.jpg 
-python detect.py --image ./data/girl.png
-
-# webcam
-python detect_video.py --video 0
-
-# video file
-python detect_video.py --video_path ./data/times_square.mp4 --video True
-python detect_video.py --video_path ./data/taryn_elliott.mp4 --video True
-
-# video file with output
-python detect_video.py --video path_to_file.mp4 --output ./output.avi
-```
-
-# Fine-tuning Task
-
-Usage:
 ```
 
 ```
 
-Logic:
 
-# Training Task
+## Training Task
 
-Usage:
 ```
 python train.py --
 ```
 
-Logic:
 
-# Command Line Args Reference
+## Command Line Args Reference
 
 ```
-# convert.py
-
 # detect.py
 
 # video_detect.py
 
 # train.py
-
 
 ```
 
