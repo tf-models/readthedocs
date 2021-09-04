@@ -29,10 +29,10 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 | utils       | no       | Utility functions for draw boxes and video frame interface. |
 | demos       | no       | Files needed to create a Jupyter Notebook/Google Colab demo of the model. |
 
-Useful Tutorial:
+### Useful Tutorial:
 
 - TensorFlow Core API document: https://www.tensorflow.org/api_docs/python/tf
-- TensorFlow/Keras Custom Layers and Models: https://www.tensorflow.org/guide/keras/custom_layers_and_models
+- TensorFlow/Keras Guide - Custom Layers and Models: https://www.tensorflow.org/guide/keras/custom_layers_and_models
 - A Concise Handbook of TensorFlow 2: https://tf.wiki/en/
 
 
