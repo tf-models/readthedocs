@@ -6,6 +6,7 @@
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
 [![TFMG Tutorial](https://img.shields.io/badge/TFMG%20Tutorial-YOLOv3-F9AB00?logo=googlecolab)](https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb)
 [![TensorFlow 2.5](https://img.shields.io/badge/TensorFlow-2.5-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.4.0)
+[![TFDS 4.4](https://img.shields.io/badge/TF%20Datasets-4.4-FF6F00?logo=tensorflow)](https://www.tensorflow.org/datasets/overview)
 [![Keras 2.6](https://img.shields.io/badge/Keras-2.6-D00000?logo=keras)](https://keras.io/)
 [![Python 3.8](https://img.shields.io/badge/Python-3.8-3776AB?logo=python)](https://www.python.org/downloads/release/python-379/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5-5C3EE8?logo=opencv)](https://opencv.org/)
