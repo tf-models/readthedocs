@@ -92,7 +92,7 @@ Download pretrained weights from author's official source:
 wget https://pjreddie.com/media/files/yolov3.weights -O ./data/yolov3.weights
 ```
 
-## TensorFlow Datasets
+## Datasets
 
 - COCO: 
     - https://www.tensorflow.org/datasets/catalog/coco
@@ -119,18 +119,20 @@ python detect.py --image ./data/girl.png
     <img src="outputs/output_dog.jpg">
 </p>
 
-### Video File 
-
-```
-# detect video file
-python detect_video.py --video_path ./data/times_square.mp4 --video True
-```
 
 ### Camera 
 
 ```
 # detect camera
 python detect_video.py --video False
+```
+
+
+### Video File 
+
+```
+# detect video file
+python detect_video.py --video_path ./data/times_square.mp4 --video True
 ```
 
 <p align="center">
