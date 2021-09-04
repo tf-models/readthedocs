@@ -13,9 +13,10 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
 </p>
 
-## Implement Detail and TFMG Tutorial Colab
+## TFMG Tutorial Colab and Implement Details
 <a href="https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/></a>
 
+### TFMG Components
 
 | Folders      | Required | Description             |
 |-------------|----------|-------------------------------------------|
@@ -28,6 +29,10 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 | common      | yes      | Registry imports. The tasks and configs need to be registered before execution.     |
 | utils       | no       | Utility functions for draw boxes and video frame interface. |
 | demos       | no       | Files needed to create a Jupyter Notebook/Google Colab demo of the model. |
+
+### YOLOv3 Model
+
+![]()
 
 ### Useful Tutorials:
 
