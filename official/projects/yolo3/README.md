@@ -17,34 +17,46 @@ Implement YOLOv3 following TensorFlow Model Garden (TFMG) components.
 <a href="https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/></a>
 
 
-## Usage
+# Installation
 
-### Requirement
+## Requirements
 
 - Python 3.7+
-- TensorFlow 2.0+
 - OpenCV 
-### Installation
 
 ```
-# install 
-pip install -q tf-models-nightly tfds-nightly
 pip install -r requirements.txt
 ```
 
-### Download Pretrain 
+## TensorFlow2 Model Garden 
+
+- TensorFlow 2.0+
+- Model Garden
+- TensorFlow Datasets
+
+
+```
+pip install -q tf-models-nightly tfds-nightly
+```
+
+## Download Pretrained Weights
+
+Download pretrained weights from author's official source: 
+
+- Darknet GitHub: https://github.com/pjreddie/darknet
+- Joseph Chet Redmon's website: https://pjreddie.com
 
 ```
 # yolov3
-wget https://pjreddie.com/media/files/yolov3.weights -O data/yolov3.weights
-python convert.py --weights ./data/yolov3.weights --output ./checkpoints/yolov3.tf
+wget https://pjreddie.com/media/files/yolov3.weights -O ./data/yolov3.weights
 ```
 
-# Detection Demo
+
+# Detection Task
 
 Support image detection and video/webcamera detection. 
 
-## Image 
+## Image File
 
 ```
 python detect.py --image ./data/dog.jpg 
@@ -54,7 +66,7 @@ python detect.py --image ./data/dog.jpg
     <img src="outputs/output_dog.jpg">
 </p>
 
-## Video 
+## Video File 
 
 ```
 python detect_video.py --video_path ./data/times_square.mp4 --video True
@@ -90,7 +102,12 @@ python detect_video.py --video_path ./data/taryn_elliott.mp4 --video True
 python detect_video.py --video path_to_file.mp4 --output ./output.avi
 ```
 
-### Training
+# Fine-tuning Task
+
+
+
+# Training Task
+## Training
 
 ```
 python train.py --
@@ -109,9 +126,3 @@ python train.py --
 
 
 ```
-
-## Implementation 
-
-
-### Darknet
-
