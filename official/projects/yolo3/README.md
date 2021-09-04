@@ -7,7 +7,7 @@
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
 
 
-Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support both image and video detection tasks. 
+Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support image and video detection tasks. 
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
