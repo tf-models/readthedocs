@@ -14,7 +14,7 @@
 [![GitHub](https://img.shields.io/badge/Up%20to%20Date-passing-green?logo=github)]()
 
 
-Implement YOLOv3 by following TensorFlow Model Garden components. Support image and video detection tasks on CPU / GPU.
+Implement YOLOv3 by following TensorFlow Model Garden components. Support image and video detection tasks running on CPU / GPU.
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
