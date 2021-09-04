@@ -14,6 +14,8 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 </p>
 
 ## TFMG Tutorial Colab and Implement Details
+
+
 <a href="https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/></a>
 
 ### TFMG Components
@@ -36,8 +38,11 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 
 ### Useful Tutorials:
 
-- TensorFlow Core API document: https://www.tensorflow.org/api_docs/python/tf
-- TensorFlow/Keras Guide - Custom Layers and Models: https://www.tensorflow.org/guide/keras/custom_layers_and_models
+- TensorFlow / Keras Guide - Custom Layers and Models: 
+    - https://keras.io/api/
+    - https://www.tensorflow.org/guide/keras/custom_layers_and_models
+- TensorFlow Core API document: 
+    - https://www.tensorflow.org/api_docs/python/tf
 - A Concise Handbook of TensorFlow 2: https://tf.wiki/en/
 
 
