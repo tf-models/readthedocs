@@ -1,6 +1,7 @@
-<p align="center">
+<!-- <p align="center">
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/project_logo.png">
-</p>
+</p> -->
+![](https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/project_logo.png)
 
 # Welcome to TensorFlow Model Garden Project Example - YOLOv3 :sunglasses:
 
