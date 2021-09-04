@@ -2,46 +2,33 @@
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/Logo_TFMG_YOLO.png">
 </p>
 
+# TensorFlow Model Garden project example - YOLOv3
+
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
 
-# Detection Demo
 
-## Image
-<p align="center">
-    <img src="outputs/output_dog.jpg">
-</p>
-
-## Video 
+Implement YOLOv3 following TensorFlow Model Garden (TFMG) components. 
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
 </p>
 
-# TFMG Components
+## Implement Detail and TFMG Tutorial Colab
+<a href="https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/></a>
 
-
-| Folders      | Required | Description                                                                                                                     |
-|-------------|----------|---------------------------------------------------------------------------------------------------------------------------------|
-| **modeling** | yes      | Darknet and prediction models and the building blocks.                                                                          |
-| **ops**     | yes      | Operations: bounding boxes and NMS functions.                                                                                    |
-| **losses**      | yes      | Loss function.                                                                                                                |
-| **dataloaders** | yes      | Decoders and parsers for data pipeline; load pre-train weights to model.                                                       |
-| configs     | yes      | The  config  files for the task class to train and evaluate the model.                                                             |
-| tasks       | yes      | Detection and training tests. Tasks for running the model. Tasks are essentially the main driver for training and evaluating the model.      |
-| common      | yes      | Registry imports. The tasks and configs need to be registered before execution.                                                          |
-| utils       | no       | Utility functions for external resources,  e.g. downloading weights, datasets from external sources, and the test cases for these functions. |
-| demos       | no       | Files needed to create a Jupyter Notebook/Google Colab demo of the model. |
-
-
-
-```
-find . -size +50M | cat >> .gitignore
-```
 
 ## Usage
+
+### Requirement
+
+- Python 3.7+
+- TensorFlow 2.0+
+- OpenCV 
 ### Installation
 
 ```
+# install 
+pip install -q tf-models-nightly tfds-nightly
 pip install -r requirements.txt
 ```
 
@@ -51,6 +38,35 @@ pip install -r requirements.txt
 # yolov3
 wget https://pjreddie.com/media/files/yolov3.weights -O data/yolov3.weights
 python convert.py --weights ./data/yolov3.weights --output ./checkpoints/yolov3.tf
+```
+
+# Detection Demo
+
+Support image detection and video/webcamera detection. 
+
+## Image 
+
+```
+python detect.py --image ./data/dog.jpg 
+```
+
+<p align="center">
+    <img src="outputs/output_dog.jpg">
+</p>
+
+## Video 
+
+```
+python detect_video.py --video_path ./data/times_square.mp4 --video True
+```
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
+</p>
+
+
+```
+find . -size +50M | cat >> .gitignore
 ```
 
 ### Detection
