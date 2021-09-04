@@ -9,7 +9,7 @@
 
 # Video
 
-![](https://evawyf-picgo.oss-us-west-1.aliyuncs.com/compuer_vision/video_09032100_times_square.gif)
+![](/official/projects/yolo3/outputs/video_33_times_square.gif)
 
 # TFMG Components
 
