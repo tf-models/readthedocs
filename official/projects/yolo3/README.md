@@ -2,7 +2,7 @@
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/project_logo.png">
 </p>
 
-# TensorFlow Model Garden project example - YOLOv3
+# Welcome to TensorFlow Model Garden project example - YOLOv3
 
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
 
