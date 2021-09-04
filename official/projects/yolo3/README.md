@@ -43,7 +43,8 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
     - https://www.tensorflow.org/guide/keras/custom_layers_and_models
 - TensorFlow Core API document: 
     - https://www.tensorflow.org/api_docs/python/tf
-- A Concise Handbook of TensorFlow 2: https://tf.wiki/en/
+- A Concise Handbook of TensorFlow 2: 
+    - https://tf.wiki/en/
 
 
 # Installation
