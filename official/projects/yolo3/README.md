@@ -24,8 +24,8 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 | **ops**     | yes      | Operations for bounding boxes and non-maximum suppression (NMS).    |
 | **losses**      | yes      | Loss functions.    |
 | **dataloaders** | yes      | Decoders and parsers for your data pipeline; functions for downloading pretrained weigths.     |
-| configs     | yes      | The  config  files for the task class to train and evaluate the model.      |
 | tasks       | yes      | Tasks for running the model. Tasks are essentially the main driver for training and evaluating the model.     |
+| configs     | yes      | The  config  files for the task class to train and evaluate the model.      |
 | common      | yes      | Registry imports. The tasks and configs need to be registered before execution.     |
 | utils       | no       | Utility functions for draw boxes and video frame interface. |
 | demos       | no       | Files needed to create a Jupyter Notebook/Google Colab demo of the model. |
