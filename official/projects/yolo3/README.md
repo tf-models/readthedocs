@@ -7,7 +7,7 @@
 [![YOLOv3](http://img.shields.io/badge/Paper-arXiv.1804.02767-B3181B?logo=arXiv)](https://arxiv.org/abs/1804.02767)
 
 
-Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support image and video detection tasks. 
+Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support both image and video detection tasks. 
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
@@ -17,19 +17,23 @@ Implement YOLOv3 by following TensorFlow Model Garden (TFMG) components. Support
 <a href="https://githubtocolab.com/tf-models/readthedocs/blob/main/TFMG_Project_Tutorial_(v6).ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/></a>
 
 
-| Folders      | Required | Description                                                                                                                                                                                   |
-|-------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **modeling** | yes      | Darknet-53 architecture and YOLO prediction models and base blocks.                                                                                                                                                              |
-| **ops**     | yes      | Operations: utility functions used by the data pipeline, loss function and modeling.                                                                                                          |
-| **losses**      | yes      | Loss                                                                                                                                                                |
-| **dataloaders** | yes      | Decoders and parsers for your data pipeline.                                                                                                                                                  |
-| configs     | yes      | The  config  files for the task class to train and evaluate the model.                                                                                                                        |
-| tasks       | yes      | Tasks for running the model. Tasks are essentially the main driver for training and evaluating the model.                                                                                     |
-| common      | yes      | Registry imports. The tasks and configs need to be registered before execution.                                                                                                             |
-| utils       | no       | Utility functions for external resources,  e.g. downloading weights, datasets from external sources, and the test cases for these functions. |
+| Folders      | Required | Description             |
+|-------------|----------|-------------------------------------------|
+| **modeling** | yes      | Darknet-53 architecture, YOLO prediction base blocks and models.     |
+| **ops**     | yes      | Operations for bounding boxes and non-maximum suppression (NMS).    |
+| **losses**      | yes      | Loss functions.    |
+| **dataloaders** | yes      | Decoders and parsers for your data pipeline; functions for downloading pretrained weigths.     |
+| configs     | yes      | The  config  files for the task class to train and evaluate the model.      |
+| tasks       | yes      | Tasks for running the model. Tasks are essentially the main driver for training and evaluating the model.     |
+| common      | yes      | Registry imports. The tasks and configs need to be registered before execution.     |
+| utils       | no       | Utility functions for draw boxes and video frame interface. |
 | demos       | no       | Files needed to create a Jupyter Notebook/Google Colab demo of the model. |
 
+Useful Tutorial:
 
+- TensorFlow Core API document: https://www.tensorflow.org/api_docs/python/tf
+- TensorFlow/Keras Custom Layers and Models: https://www.tensorflow.org/guide/keras/custom_layers_and_models
+- A Concise Handbook of TensorFlow 2: https://tf.wiki/en/
 
 
 # Installation
