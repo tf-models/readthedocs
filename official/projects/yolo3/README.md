@@ -141,14 +141,9 @@ python detect_video.py --video_path ./data/times_square.mp4 --video True
 </p>
 
 
-## Fine-tuning Task
-
-```
-
-```
 
 
-## Training Task
+## Training / Fine-tuning Task
 
 ```
 python train.py --
