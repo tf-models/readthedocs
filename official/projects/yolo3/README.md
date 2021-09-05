@@ -16,8 +16,10 @@
 Implement YOLOv3 by following TensorFlow Model Garden components. Support image and video detection tasks running on CPU / GPU.
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif">
+    <img src="https://storage.cloud.google.com/tf-models-evawyf/models-yolo3/assets/video_times_square.gif">
 </p>
+
+<!--  https://raw.githubusercontent.com/tf-models/readthedocs/main/official/projects/yolo3/assets/video_times_square.gif -->
 
 ## TFMG Tutorial Colab and Implement Details
 
