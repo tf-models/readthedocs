@@ -30,6 +30,13 @@ from dataloader.data import make_dataset
 Part 1: Feature Extraction
 """
 class BaseConv(tf.keras.Model):
+    """ base conv includes padding, batchnorm, leakyrelu 
+    Args: 
+        filters: 
+        kernel_size:
+        strides: padding same if strides==1, otherwise padding valid. 
+    """
+    
     def __init__(self, filters, kernel_size, strides=1):
         super().__init__()
         # padding
@@ -58,6 +65,13 @@ class BaseConv(tf.keras.Model):
 
 
 class ResBlock(tf.keras.Model):
+    """ residual block includes 2 base conv 
+    Args:
+        filters: first one base conv filters
+        strides: same strides for both two base conv
+    Return:
+        input add into output
+    """
     def __init__(self, filters, strides=1):
         super().__init__()
         self.basic0 = BaseConv(filters=filters, kernel_size=1, strides=strides)
@@ -72,7 +86,9 @@ class ResBlock(tf.keras.Model):
 
 
 class DarkNet53(tf.keras.Model):
+    """ architecture to extract features 
     
+    """
     def __init__(self):
         super().__init__()
         self.basic0 = BaseConv(filters=32, kernel_size=3)
