@@ -1,30 +1,8 @@
-import numpy as np 
-import cv2 as cv
+
 import tensorflow as tf
-
 from tensorflow.keras.layers import (
-    Layer, 
-    Add,
-    Concatenate,
-    Conv2D,
-    Input,
-    InputSpec, 
-    Lambda,
-    LeakyReLU,
-    MaxPool2D,
-    UpSampling2D,
-    ZeroPadding2D,
-    BatchNormalization,   
+    Concatenate, Conv2D, LeakyReLU, UpSampling2D, ZeroPadding2D, BatchNormalization 
 )
-from tensorflow.keras.regularizers import l2
-from tensorflow.keras.losses import (
-    binary_crossentropy,
-    sparse_categorical_crossentropy
-)
-
-from loss.loss import yolo_loss
-from ops.decode import decode
-from dataloader.data import make_dataset
 
 """
 Part 1: Feature Extraction
@@ -32,8 +10,6 @@ Part 1: Feature Extraction
 class BaseConv(tf.keras.Model):
     """ base conv includes padding, batchnorm, leakyrelu 
     Args: 
-        filters: 
-        kernel_size:
         strides: padding same if strides==1, otherwise padding valid. 
     """
     

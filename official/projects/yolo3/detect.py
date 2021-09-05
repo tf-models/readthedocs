@@ -19,8 +19,8 @@ flags.DEFINE_string('pretrain_weights','./data/yolov3.weights', 'path of class l
 
 flags.DEFINE_multi_integer('model_size', (608, 608), 'Resolution of DNN input, must be the multiples of 32')
 flags.DEFINE_integer('max_out_size', 20 , 'maximum detected object amount of one class')
-flags.DEFINE_float('iou_threshold', 0.4 , 'threshold of non-max suppression') # 0.4
-flags.DEFINE_float('confid_threshold', 0.3 , 'threshold of confidence') # 0.3
+flags.DEFINE_float('iou_threshold', 0.4 , 'threshold of non-max suppression') 
+flags.DEFINE_float('confid_threshold', 0.3 , 'threshold of confidence') 
 
 
 
