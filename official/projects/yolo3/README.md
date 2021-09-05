@@ -114,9 +114,6 @@ Support image detection and video/webcamera detection.
 # detect image
 python detect.py --image ./data/dog.jpg 
 python detect.py --image ./data/street.jpg  
-python detect.py --image ./data/eagle.jpg  
-python detect.py --image ./data/giraffe.jpg 
-python detect.py --image ./data/girl.png
 ```
 
 <p align="center">
