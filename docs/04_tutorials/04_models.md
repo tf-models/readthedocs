@@ -1,10 +1,11 @@
 # Customize Models
 
 First, read the TensorFlow and Keras documents:
+
     - [Keras Developer Guides](https://keras.io/guides/)
     - [Making new Layers and Models via subclassing](https://www.tensorflow.org/guide/keras/custom_layers_and_models)
 
-In model garden, we recommend to implement customize layers and model as below:
+In model garden, we recommend to use `register_keras_serializable()` to implement customize layers and model as below:
 
 ```python
 
@@ -12,7 +13,9 @@ In model garden, we recommend to implement customize layers and model as below:
 class MyLayer(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
         super(MyLayer, self).__init__(**kwargs)
-        # this _config_dict is required, as the `get_config()` will be used in `tf.keras.utils.register_keras_serializable()`
+        # this _config_dict is required, 
+        # as the `get_config()` will be used 
+        # in `tf.keras.utils.register_keras_serializable()`
         self._config_dict = {
             'filters': filters,
             'kernel_size': kernel_size,
