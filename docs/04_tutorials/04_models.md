@@ -1,27 +1,10 @@
 # Customize Models
 
+## Customize model structure 
 First, read the TensorFlow and Keras documents:
 
 - [Keras Developer Guides](https://keras.io/guides/)
 - [Making new Layers and Models via subclassing](https://www.tensorflow.org/guide/keras/custom_layers_and_models)
-
-
-## official.modeling.tf_utils 
-
-```
-tf_utils.get_activation(
-    identifier, use_keras_layer=False
-)
-```
-
-It checks string first and if it is one of customized activation not in TF,
-the corresponding activation will be returned. For non-customized activation
-names and callable identifiers, always fallback to tf.keras.activations.get.
-
-Prefers using keras layers when use_keras_layer=True. Now it only supports
-'relu', 'linear', 'identity', 'swish'.
-
-For other actitivation, such as `LeakyRelu`, you can use `tf.keras.layers.LeakyReLU()` 
 
 In model garden, we recommend to use `register_keras_serializable()` to implement customize layers and model as below:
 
@@ -33,14 +16,15 @@ class MyLayer(tf.keras.layers.Layer):
         self, 
         filters,
         strides,
-        dilation_rate=1,
         kernel_size=3,
         activation='relu',
+        ..., 
         **kwargs):
+
+        # [Required] 
         super(MyLayer, self).__init__(**kwargs)
 
-        # this _config_dict is required, 
-        # as the `get_config()` will be used 
+        # [Required] the `get_config()` will be used 
         # in `tf.keras.utils.register_keras_serializable()`
         self._config_dict = {
             'filters': filters,
@@ -59,20 +43,20 @@ class MyLayer(tf.keras.layers.Layer):
         }
         self._conv = tf.keras.layers.Conv2D(**conv_kwargs)
 
-        # 
+        # Now tf_utils.get_activation only supports 'relu', 'linear', 'identity', 'swish'.
         self._activation_fn = official.modeling.tf_utils.get_activation(activation)
 
-    # required for `tf.keras.utils.register_keras_serializable()`
+    # [Required] for `tf.keras.utils.register_keras_serializable()`
     def get_config(self):
         return self._config_dict
 
-    # (build func is optional) 
+    # [Optional]
     # declear layers can also do in __init__ 
     # it will be useful when you need to specific input_shape
     def build(self, input_shape):
         ... 
 
-    # required 
+    # [Required] 
     def call(self, inputs, training=False):
         x = self._conv(inputs)
         return x
@@ -81,6 +65,27 @@ class MyLayer(tf.keras.layers.Layer):
 Here, the decorater `tf.keras.utils.register_keras_serializable()` injects the Keras custom object dictionary `MyLayer()`, so that it can be serialized and deserialized without needing an entry in the user-provided custom object dict. 
 
 > Note that to be serialized and deserialized, classes must implement the `get_config()` method. Functions do not have this requirement. The object will be registered under the key 'package>name' where `name`, defaults to the object name if not passed.
+
+
+
+
+
+## official.modeling.tf_utils 
+
+```
+tf_utils.get_activation(
+    identifier, use_keras_layer=False
+)
+```
+
+It checks string first and if it is one of customized activation not in TF,
+the corresponding activation will be returned. For non-customized activation
+names and callable identifiers, always fallback to `tf.keras.activations.get`.
+
+Prefers using keras layers when `use_keras_layer=True`. Now it only supports
+'relu', 'linear', 'identity', 'swish'.
+
+For other actitivation, such as `LeakyRelu`, you can use `tf.keras.layers.LeakyReLU()` at this point. 
 
 
 ##
