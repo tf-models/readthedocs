@@ -1,15 +1,16 @@
 # Customize Models
 
-## Customize model structure 
 First, read the TensorFlow and Keras documents:
 
 - [Keras Developer Guides](https://keras.io/guides/)
 - [Making new Layers and Models via subclassing](https://www.tensorflow.org/guide/keras/custom_layers_and_models)
 
+
+## TFMG Customize Model Structure 
+
 In model garden, we recommend to use `register_keras_serializable()` to implement customize layers and model as below:
 
 ```python
-
 @tf.keras.utils.register_keras_serializable(package='Vision')
 class MyLayer(tf.keras.layers.Layer):
     def __init__(
