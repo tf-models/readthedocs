@@ -55,7 +55,7 @@ Implement YOLOv3 by following TensorFlow Model Garden components. Support image 
 
 ## TODO list
 
-
+https://github.com/tf-models/readthedocs/issues/1
 
 ## Installation
 
@@ -114,9 +114,6 @@ Support image detection and video/webcamera detection.
 # detect image
 python detect.py --image ./data/dog.jpg 
 python detect.py --image ./data/street.jpg  
-python detect.py --image ./data/eagle.jpg  
-python detect.py --image ./data/giraffe.jpg 
-python detect.py --image ./data/girl.png
 ```
 
 <p align="center">
@@ -144,14 +141,9 @@ python detect_video.py --video_path ./data/times_square.mp4 --video True
 </p>
 
 
-## Fine-tuning Task
-
-```
-
-```
 
 
-## Training Task
+## Training / Fine-tuning Task
 
 ```
 python train.py --
