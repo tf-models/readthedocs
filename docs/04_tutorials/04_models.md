@@ -2,8 +2,26 @@
 
 First, read the TensorFlow and Keras documents:
 
-    - [Keras Developer Guides](https://keras.io/guides/)
-    - [Making new Layers and Models via subclassing](https://www.tensorflow.org/guide/keras/custom_layers_and_models)
+- [Keras Developer Guides](https://keras.io/guides/)
+- [Making new Layers and Models via subclassing](https://www.tensorflow.org/guide/keras/custom_layers_and_models)
+
+
+## official.modeling.tf_utils 
+
+```
+tf_utils.get_activation(
+    identifier, use_keras_layer=False
+)
+```
+
+It checks string first and if it is one of customized activation not in TF,
+the corresponding activation will be returned. For non-customized activation
+names and callable identifiers, always fallback to tf.keras.activations.get.
+
+Prefers using keras layers when use_keras_layer=True. Now it only supports
+'relu', 'linear', 'identity', 'swish'.
+
+For other actitivation, such as `LeakyRelu`, you can use `tf.keras.layers.LeakyReLU()` 
 
 In model garden, we recommend to use `register_keras_serializable()` to implement customize layers and model as below:
 
@@ -11,26 +29,60 @@ In model garden, we recommend to use `register_keras_serializable()` to implemen
 
 @tf.keras.utils.register_keras_serializable(package='Vision')
 class MyLayer(tf.keras.layers.Layer):
-    def __init__(self, **kwargs):
+    def __init__(
+        self, 
+        filters,
+        strides,
+        dilation_rate=1,
+        kernel_size=3,
+        activation='relu',
+        **kwargs):
         super(MyLayer, self).__init__(**kwargs)
+
         # this _config_dict is required, 
         # as the `get_config()` will be used 
         # in `tf.keras.utils.register_keras_serializable()`
         self._config_dict = {
             'filters': filters,
             'kernel_size': kernel_size,
-            'strides': strides
+            'strides': strides, 
+            
+            ...
         }
+
+        # keras.layers accept dirctionary key args
+        # so here is a way to init conv layer 
+        conv_kwargs = {
+            'filters': filters,
+            'kernel_size': kernel_size,
+            'strides': strides, 
+        }
+        self._conv = tf.keras.layers.Conv2D(**conv_kwargs)
+
+        # 
+        self._activation_fn = official.modeling.tf_utils.get_activation(activation)
 
     # required for `tf.keras.utils.register_keras_serializable()`
     def get_config(self):
         return self._config_dict
+
+    # (build func is optional) 
+    # declear layers can also do in __init__ 
+    # it will be useful when you need to specific input_shape
+    def build(self, input_shape):
+        ... 
+
+    # required 
+    def call(self, inputs, training=False):
+        x = self._conv(inputs)
+        return x
 ```
 
 Here, the decorater `tf.keras.utils.register_keras_serializable()` injects the Keras custom object dictionary `MyLayer()`, so that it can be serialized and deserialized without needing an entry in the user-provided custom object dict. 
 
-Note that to be serialized and deserialized, classes must implement the `get_config()` method. Functions do not have this requirement.
-The object will be registered under the key 'package>name' where `name`, defaults to the object name if not passed.
+> Note that to be serialized and deserialized, classes must implement the `get_config()` method. Functions do not have this requirement. The object will be registered under the key 'package>name' where `name`, defaults to the object name if not passed.
+
+
 ##
 
 
