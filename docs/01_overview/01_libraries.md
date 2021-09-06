@@ -24,10 +24,13 @@ tf_utils.is_special_none_tensor(tensor)
 ### official.modeling.performance
 
 ```python
+
+# could be used in tasks
 performance.configure_optimizer(
     optimizer, use_float16=False, use_graph_rewrite=False, loss_scale=None
 )
 
+# could be used in tasks
 set_mixed_precision_policy(
     dtype, loss_scale=None
 )
