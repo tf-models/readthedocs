@@ -17,7 +17,7 @@ class BaseConv(tf.keras.Model):
         super().__init__()
         # padding
         self.strides = strides
-        self.padd = ZeroPadding2D(((1, 0), (1, 0)))
+        self.padd = ZeroPadding2D()
         self.basic0 = Conv2D(
             filters=filters, 
             kernel_size=kernel_size, 

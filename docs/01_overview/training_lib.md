@@ -6,7 +6,7 @@ TensorFlow Model Garden is conducting a major rewrite to consolidate model imple
 
 ### Task
 
-We define all modeling artifacts of a particular machine learning task as a `Task` object. The `Task` includes `build_model` for creating the model instance, `build_inputs` for defining `tf.data` input pipeline, `train_step` and `validation_step` for the computation, `build_metrics` for streaming metrics etc.
+We define all modeling artifacts of a particular machine learning task as a [`Task` object](https://github.com/tensorflow/models/blob/master/official/core/base_task.py). The `Task` includes `build_model` for creating the model instance, `build_inputs` for defining `tf.data` input pipeline, `train_step` and `validation_step` for the computation, `build_metrics` for streaming metrics etc.
 
 Users usually need to override the following key functions:
 - `__init__`: [don't-usually-override]
@@ -17,9 +17,9 @@ Users usually need to override the following key functions:
 - `build_metrics`: [often-do-override]
 - `initialize`
 
-In addition, if users want to compute the evaluation metrics on host (using numpy or TF metrics that cannot run on TPUs), users can override (1) `aggregate_logs` method that updates a stateful memory with the output of `validation_step`, and (2) `reduce_aggregated_logs` method that processes the aggregated stateful memory to get final results. Please see `sentence_prediction.py` as an example.
+In addition, if users want to compute the evaluation metrics on host (using numpy or TF metrics that cannot run on TPUs), users can override (1) `aggregate_logs` method that updates a stateful memory with the output of `validation_step`, and (2) `reduce_aggregated_logs` method that processes the aggregated stateful memory to get final results. Please see [`sentence_prediction.py`](https://github.com/tensorflow/models/blob/master/official/nlp/tasks/sentence_prediction.py) as an example.
 
-For example, we can find all NLP tasks inside `nlp/tasks`. Each task is registered by the task registry as:
+For example, we can find all NLP tasks inside [`nlp/tasks`](https://github.com/tensorflow/models/blob/master/official/nlp/tasks). Each task is registered by the task registry as (e.g. [`masked_lm.py`](https://github.com/tensorflow/models/blob/master/official/nlp/tasks/masked_lm.py)):
 
 ```python
 @task_factory.register_task_cls(MaskedLMConfig)
@@ -37,18 +37,19 @@ def initialize(self, model: tf.keras.Model):
   # Calls tf.train.Checkpoint APIs to restore states.
 ```
 
-The `TaskConfig` contains a string attribute `init_checkpoint`. The initialize function restore the states from the path or directory provided by `init_checkpoint`.
+The [`TaskConfig`](https://github.com/tensorflow/models/blob/master/official/core/config_definitions.py) contains a string attribute `init_checkpoint`. The initialize function restore the states from the path or directory provided by `init_checkpoint`.
 
-The default workflow in the `run_experiment` is: 
+The default workflow in the [`run_experiment`](https://github.com/tensorflow/models/blob/master/official/core/train_lib.py) is: 
 - `task.initialize` --> `trainer.initialize` --> `tf.train.CheckpointManager(init_fn=xxx)`.
   
-The `tf.train.CheckpointManager` will only trigger the initialization function if there is no checkpoint state file in the checkpoint directly. Thus, if you restart in the middle of the training, you do not expect the initialization function to be called.
+The [`tf.train.CheckpointManager`](https://www.tensorflow.org/api_docs/python/tf/train/CheckpointManager) will only trigger the initialization function if there is no checkpoint state file in the checkpoint directly. Thus, if you restart in the middle of the training, you do not expect the initialization function to be called.
+
 
 *Note that, the key API to initialize the model variables from a checkpoint is the `init_fn` of `tf.train.CheckpointManager`. Users can branch the model garden code to customize for their use cases. Please feel free to directly implement a initialization closure to pass to the `tf.train.CheckpointManager`.*
 
 ### Training Binary
 
-Once a task is registered, it can be used inside the training binary: `train binary`. The task is used in the entire training binary as follows:
+Once a task is registered, it can be used inside the training binary: `train binary`. The task is used in the entire training binary as follows ([source code](https://github.com/tensorflow/models/blob/master/official/core/config_definitions.py)):
 
 ```python
 params = ExperimentConfig()
@@ -63,17 +64,17 @@ controller.train(steps=num_steps)
 
 We create trainer instances based on [Orbit] and it consumes the training artifacts defined in the task instance. The trainer instance will be further passed to [Orbit controller] and finally the controller will execute the training and evaluation procedure.
 
-You can find predefined trainers in [trainers] folder, there is a collection of trainers implemented, e.g. `the default trainer` for most supervised learning tasks, `progressive trainer` to speed up training, etc. Users can build their customized trainers as well.
+You can find predefined trainers in [trainers](https://github.com/tensorflow/models/blob/master/official/modeling/fast_training/progressive/trainer.py) folder, there is a collection of trainers implemented, e.g. `the default trainer` for most supervised learning tasks, `progressive trainer` to speed up training, etc. Users can build their customized trainers as well.
 
 We encapsulate the workflow of creating the task, trainer, controller and running the controller in different modes as the `run_experiment` function. The function is supposed to be used as a reference and users are free to copy. We do not expect the `run_experiment` to support diverse use cases. Inside the model garden, we have defined variants of `run_experiment` for different use cases.
 
 ### Experiment Configuration
 
-We use `Config`, a dataclass with serialization functionality, as the container to restore standard coarse configuration. The task and trainer behavior is configured by the `ExperimentConfig`, which includes the configurations for `task`, `trainer` and `runtime`.
+We use [`Config`](https://github.com/tensorflow/models/blob/master/official/core/config_definitions.py), a dataclass with serialization functionality, as the container to restore standard coarse configuration. The task and trainer behavior is configured by the `ExperimentConfig`, which includes the configurations for `task`, `trainer` and `runtime`.
 
 #### Caveats
 
-We use `dataclasses` to define configuration python classes to get nice properties of dataclasses. However, `pytype` does not work well for the inheritance of dataclasses. The attributes from parent classes cannot be recognized during pytype inference.
+We use `dataclasses` ([Python Data Class Lib](https://docs.python.org/3/library/dataclasses.html)) to define configuration python classes to get nice properties of dataclasses. However, `pytype` does not work well for the inheritance of dataclasses. The attributes from parent classes cannot be recognized during pytype inference.
 
 `Config` supports convenient transformation from nested dictionary inputs to the type annotated class. You may see this pattern in the model garden experiment examples. However, this violates type annotation because the dataclass init expect `Config` objects instead of the plain dictionary.
 
